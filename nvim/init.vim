@@ -11,6 +11,8 @@ autocmd Filetype cjs setlocal tabstop=2 softtabstop=2 shiftwidth=2 noexpandtab
 autocmd Filetype lua setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
 inoremap jk <Esc>
+nnoremap ]n :cnext <CR>
+nnoremap [n :cprev <CR>
 set relativenumber number!
 set hidden
 set completeopt=menu,menuone,noselect
@@ -78,8 +80,6 @@ smap <expr> <C-k>   vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<C-k
 
 " vim-svelte
 let g:vim_svelte_plugin_use_typescript = 1
-" make sure to kill prettierd (uses > 0.1G of mem)
-:autocmd VimLeave * silent !pkill prettierd
 
 " css and scss
 " au BufRead,BufNewFile *.scss set filetype=scss.css
