@@ -1,0 +1,30 @@
+#! /bin/zsh
+
+# start sxhkd
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+# if on the laptop
+if [ "$HOST" = "sam-void" ] || [ "$HOST" = "sam-lap" ]
+then
+	bspc monitor eDP1 -d 1 2 3 4 7 8 9 0
+	polybar laptop &
+	bspc config top_padding 30
+else
+	echo "$HOST"
+	# set up multi-monitor
+	# (have to change this in order to use with polybar)
+	bspc monitor %DP-2.8 -n bottom
+	#bspc monitor DP-5 -n top
+
+	bspc monitor bottom -d 1 2 3 4
+	bspc monitor DP-5 -d 7 8 9 0
+	bspc monitor bottom -s DP-5
+
+	# start polybars
+	polybar bottom & 
+	polybar top & 
+
+	# padding for polybar
+	bspc config -m bottom top_padding 30
+	bspc config -m DP-5 top_padding 30
+fi

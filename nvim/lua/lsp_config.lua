@@ -79,13 +79,29 @@ cmp.setup({
     }),
   },
   sources = {
-    { name = 'nvim_lsp' },
+    { name = 'nvim_lsp', keyword_length = 3, },
 
     -- For vsnip user.
-    { name = 'vsnip'},
-
-    { name = 'buffer'},
+    { name = 'vsnip', keyword_length = 2, },
+    { name = 'buffer', keyword_length = 3, },
+    { name = 'path', keyword_length = 1, },
   }
+})
+
+-- Use buffer source for `/`.
+cmp.setup.cmdline('/', {
+  sources = {
+    { name = 'buffer' }
+  }
+})
+
+-- Use cmdline & path source for ':'.
+cmp.setup.cmdline(':', {
+  sources = cmp.config.sources({
+    { name = 'path' }
+  }, {
+    { name = 'cmdline', keyword_length = 3 }
+  })
 })
 
 -- Setup lspconfig
@@ -220,6 +236,6 @@ end
 vim.api.nvim_exec([[
 augroup FormatAutogroup
   autocmd!
-  autocmd BufWritePost *svelte,*.ts,*.js lua vim.lsp.buf.formatting()
+  autocmd BufWritePre *svelte,*.ts,*.js lua vim.lsp.buf.formatting()
 augroup END
 ]], true)

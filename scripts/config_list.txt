@@ -1,0 +1,15 @@
+config-list		/home/sam/dotfiles/scripts/config_list.txt
+edit_config.sh 	/home/sam/dotfiles/scripts/edit_config.sh
+xinit			/home/sam/.xinitrc
+zsh				/home/sam/.zshrc
+tmux			/home/sam/.tmux.conf
+nvim			/home/sam/.config/nvim/init.vim
+nvim-lsp		/home/sam/.config/nvim/lua/lsp_config.lua
+sxhkd			/home/sam/.config/sxhkd/sxhkdrc
+bspwm			/home/sam/.config/bspwm/bspwmrc
+picom			/home/sam/.config/picom/picom.conf
+alacritty		/home/sam/.config/alacritty/alacritty.yml
+polybar			/home/sam/.config/polybar/config
+rofi			/home/sam/.config/rofi/config.rasi
+xscreensaver	/home/sam/.xscreensaver
+ledger			/home/sam/gdrive/Documents&Bookkeeping/2021/schwartzit_2021.ledger

@@ -31,6 +31,8 @@ Plug 'williamboman/nvim-lsp-installer'
 " auto completer
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-nvim-lsp'
 
 " signature
@@ -49,25 +51,26 @@ Plug 'itchyny/lightline.vim'
 " tools
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'preservim/nerdtree'
-Plug 'preservim/tagbar'
+Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'preservim/tagbar', { 'on': 'TagBar' }
 Plug 'tpope/vim-fugitive'
 
 " editing
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'jiangmiao/auto-pairs'
 
 " web / svelte
-Plug 'leafOfTree/vim-svelte-plugin'
-Plug 'leafgarland/typescript-vim'
-Plug 'mhartington/formatter.nvim'
-Plug 'cakebaker/scss-syntax.vim'
+Plug 'leafOfTree/vim-svelte-plugin', { 'for': 'svelte' }
+Plug 'leafgarland/typescript-vim', { 'for': ['svelte', 'ts'] }
+Plug 'cakebaker/scss-syntax.vim', { 'for': ['svelte', 'css', 'scss'] }
 
 call plug#end()
 
 
 " plugin config
 colorscheme gruvbox
+nnoremap <leader>t :NERDTreeToggle<CR>
 nnoremap <silent> <C-p> :Files<CR>
 
 " Expand or jump
