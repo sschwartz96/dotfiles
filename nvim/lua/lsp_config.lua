@@ -79,11 +79,11 @@ cmp.setup({
     }),
   },
   sources = {
-    { name = 'nvim_lsp', keyword_length = 3, },
+    { name = 'nvim_lsp', keyword_length = 1, },
 
     -- For vsnip user.
     { name = 'vsnip', keyword_length = 2, },
-    { name = 'buffer', keyword_length = 3, },
+    { name = 'buffer', keyword_length = 2, },
     { name = 'path', keyword_length = 1, },
   }
 })
@@ -215,7 +215,10 @@ function GoImports(timeoutms)
   local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, timeoutms)
   if not result or next(result) == nil then return end
   local actions = result[1].result
-  if not actions then return end
+  if not actions then 
+    vim.lsp.buf.formatting()
+    return 
+  end
   local action = actions[1]
 
   -- textDocument/codeAction can return either Command[] or CodeAction[]. If it
@@ -231,6 +234,7 @@ function GoImports(timeoutms)
   else
     vim.lsp.buf.execute_command(action)
   end
+  vim.lsp.buf.formatting()
 end
 
 vim.api.nvim_exec([[

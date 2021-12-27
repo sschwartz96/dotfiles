@@ -65,6 +65,9 @@ Plug 'leafOfTree/vim-svelte-plugin', { 'for': 'svelte' }
 Plug 'leafgarland/typescript-vim', { 'for': ['svelte', 'ts'] }
 Plug 'cakebaker/scss-syntax.vim', { 'for': ['svelte', 'css', 'scss'] }
 
+" go
+"Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 call plug#end()
 
 
@@ -108,5 +111,5 @@ let g:lightline = {
 augroup GO_LSP
 	autocmd!
 	autocmd BufWritePre *.go :silent! lua GoImports(1000)
-	autocmd BufWritePre *.go :silent! lua vim.lsp.buf.formatting()
+	" autocmd BufWritePre *.go :silent! lua vim.lsp.buf.formatting()
 augroup END
