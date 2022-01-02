@@ -66,7 +66,8 @@ Plug 'leafgarland/typescript-vim', { 'for': ['svelte', 'ts'] }
 Plug 'cakebaker/scss-syntax.vim', { 'for': ['svelte', 'css', 'scss'] }
 
 " go
-"Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'buoto/gotests-vim'
 
 call plug#end()
 
@@ -107,6 +108,10 @@ let g:lightline = {
 			\   'gitbranch': 'FugitiveHead'
 			\  },
 			\ }
+
+" go properties
+let g:go_fmt_autosave = 0
+let g:go_imports_autosave = 0
 
 augroup GO_LSP
 	autocmd!
