@@ -8,7 +8,7 @@ super + ctrl + shift + s
 	snooze
 
 super + shift + s
-	sleep 0.25 && scrot -selection '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'
+	sleep 0.25 && scrot --select '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'
 
 # 
 # bspc bindings
@@ -141,11 +141,8 @@ super + Left
 super + Right 
 	media next
 
-ctrl + shift + 0
-	/home/sam/bin/switch_audio.sh 0
-
-ctrl + shift + 1
-	/home/sam/bin/switch_audio.sh 1
+ctrl + shift + {0-9}
+	/home/sam/bin/switch_audio.sh {0-9}
 
 ###
 #

@@ -1,5 +1,4 @@
 #! /bin/zsh
-
 # start sxhkd
 pgrep -x sxhkd > /dev/null || sxhkd &
 
@@ -28,3 +27,6 @@ else
 	bspc config -m bottom top_padding 30
 	bspc config -m DP-5 top_padding 30
 fi
+
+# floating window rules
+bspc rule -a zoom state=floating
