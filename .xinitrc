@@ -31,8 +31,12 @@ fi
 # keyboard delay & rate
 xset r rate 200 60
 
-# swap esc and caps lock
-setxkbmap -option caps:swapescape
+# don't swap on desktop due to new keyboard
+if [ "$HOST" = "sam-lap" ]
+then
+	# swap esc and caps lock
+	setxkbmap -option caps:swapescape
+fi
 
 # alt + hjkl {left down up left}
 #xmodmap ~/.key_maps
