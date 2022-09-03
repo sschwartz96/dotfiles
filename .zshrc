@@ -98,6 +98,7 @@ export PATH=$PATH:~/bin/android-studio-dir/bin
 export PATH=$PATH:~/bin/android-studio-dir/jre
 #for python-pip
 export PATH=$PATH:/home/sam/.local/bin
+export PATH=$PATH:/home/sam/github.com/protobuf.dart/protoc_plugin/bin
 
 
 # VARIABLES 
@@ -126,6 +127,8 @@ export NO_PROXY=localhost,127.0.0.1
 export CHROME_EXECUTABLE=google-chrome-stable
 # for flutter linux development
 export CMAKE_CXX_COMPILER=/usr/bin/g++
+# dart sdk
+export DART_SDK=~/github.com/flutter/bin/cache/dart-sdk/bin
 
 ########## END variables ########## 
 

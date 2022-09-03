@@ -208,6 +208,13 @@ label-empty-padding = 0
 
 ; Separator in between workspaces
 ; label-separator = |
+fuzzy-match = true
+ws-icon-0 = Alacritty;♚
+ws-icon-1 = office;♛
+ws-icon-2 = graphics;♜
+ws-icon-3 = mail;♝
+ws-icon-4 = web;♞
+ws-icon-default = ♟
 
 [module/playerctl]
 type = custom/script
