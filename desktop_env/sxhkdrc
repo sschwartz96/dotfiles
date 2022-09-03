@@ -80,6 +80,12 @@ super + f
 super + d
 	bspc node -t \~floating
 
+super + {_,shift + }g
+	bspc node 'focused.floating#{next,prev}.local.!hidden.floating' -f \
+	    || bspc node 'last.local.!focused.!hidden.floating' -f \
+	    || bspc node  'any.local.!focused.!hidden.floating' -f
+
+
 ## increase 40 pixels 
 #super + ctrl + shift + {j,k,h,l}
 #	bspc node --resize {bottom 0 40,top 0 -40,left -40 0,right 40 0}
@@ -141,6 +147,9 @@ super + Left
 super + Right 
 	media next
 
+ctrl + shift + 2
+	/home/sam/bin/switch_audio.sh 2 && pulseeffects
+
 ctrl + shift + {0-9}
 	/home/sam/bin/switch_audio.sh {0-9}
 
@@ -158,6 +167,10 @@ super + e
 super + p
 	rofi -show run
 
+# start rofi window
+super + w 
+	rofi -show window
+
 # start rofi-calc
 super + c
 	rofi -show calc -modi calc -no-show-match -no-sort
@@ -173,3 +186,11 @@ super + Print
 # toggle thunderbird
 super + t
 	birdtray -t
+
+# mouse middle button scroll
+super + shift + m
+	xinput --set-prop "pointer:Logitech G Pro Gaming Mouse" "libinput Scroll Method Enabled" 0, 0, 1
+	xinput --set-prop "pointer:Logitech G Pro Gaming Mouse" "libinput Button Scrolling Button" 2
+
+super + shift + n
+	xinput --set-prop "pointer:Logitech G Pro Gaming Mouse" "libinput Scroll Method Enabled" 0, 0, 0
