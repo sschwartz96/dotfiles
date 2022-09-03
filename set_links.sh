@@ -8,8 +8,7 @@
 
 
 # nvim
-ln -s $PWD/nvim/init.vim ~/.config/nvim/init.vim
-ln -s $PWD/nvim/lua/lsp_config.lua ~/.config/lua/lsp_config.lua
+ln -s $PWD/nvim/ ~/.config/nvim
 
 # essential
 ln -s $PWD/.xinitrc ~/.xinitrc
@@ -25,4 +24,4 @@ ln -s $PWD/desktop_env/alacritty.yml ~/.config/alacritty/alacritty.yml
 ln -s $PWD/desktop_env/config.rasi ~/.config/rofi/config.rasi
 
 # scripts
-ln -s $PWD/scripts/rclone-sync.sh ~/scripts/rclone-sync.sh
+ln -s $PWD/scripts/rclone-sync.sh ~/scripts/

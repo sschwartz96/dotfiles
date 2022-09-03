@@ -3,8 +3,7 @@ edit_config.sh 	/home/sam/dotfiles/scripts/edit_config.sh
 xinit			/home/sam/.xinitrc
 zsh				/home/sam/.zshrc
 tmux			/home/sam/.tmux.conf
-nvim			/home/sam/.config/nvim/init.vim
-nvim-lsp		/home/sam/.config/nvim/lua/lsp_config.lua
+nvim			/home/sam/.config/nvim/init.lua
 sxhkd			/home/sam/.config/sxhkd/sxhkdrc
 bspwm			/home/sam/.config/bspwm/bspwmrc
 picom			/home/sam/.config/picom/picom.conf
