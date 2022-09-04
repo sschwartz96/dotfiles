@@ -2,6 +2,9 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+  -- plenary.nvim
+  use "nvim-lua/plenary.nvim"
+
   -- Configurations for Nvim LSP
   use 'neovim/nvim-lspconfig'
 
@@ -33,6 +36,9 @@ return require('packer').startup(function(use)
     },
     tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
+
+  -- go tooling
+  use { "olexsmir/gopher.nvim" }
 
   -- web / svelte
   use { 'leafOfTree/vim-svelte-plugin' }
@@ -68,6 +74,14 @@ return require('packer').startup(function(use)
   require('nvim-treesitter').setup()
 
   -- nvim-dap golang
-  require('dap-go').setup()
+  -- require('dap-go').setup()
+  require('dap').adapters.go = {
+    type = 'server',
+    port = '${port}',
+    executable = {
+      command = 'dlv',
+      args = { 'dap', '-l', '127.0.0.1:${port}' },
+    }
+  }
 
 end)
