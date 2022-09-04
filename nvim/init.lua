@@ -1,24 +1,5 @@
 require('plugins')
 
--- Setup plugins
-
--- nvim-tree
-require("nvim-tree").setup()
-
--- Comment.nvim
-require('Comment').setup()
-
--- Visuals
-require('gruvbox').setup({})
-
--- nvim-treesitter
-require('nvim-treesitter').setup()
-
--- nvim-dap golang
-require('dap-go').setup()
-
-
-
 -- General configuration
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
@@ -62,6 +43,7 @@ map('n', '<space>b', ':FzfLua buffers<CR>', silentnoremap)
 
 map('i', 'jk', '<Esc>', silentnoremap)
 map('n', '<leader>t', ':NvimTreeToggle<cr>', silentnoremap)
+map('n', '<leader>c', ':ccl<cr>', silentnoremap)
 
 local function vsnip_jump()
   if vim.fn['vsnip#available(1)'] then
@@ -83,3 +65,12 @@ map('i', '<C-j>', vsnip_jump(), silentnoremap)
 map('s', '<C-j>', vsnip_jump(), silentnoremap)
 map('i', '<C-k>', vsnip_prev(), silentnoremap)
 map('s', '<C-k>', vsnip_prev(), silentnoremap)
+
+-- debugging mappings
+map('n', '<F5>', ':DapContinue <CR>', silentnoremap)
+map('n', '<F10>', ':DapStepOver <CR>', silentnoremap)
+map('n', '<F11>', ':DapStepInto <CR>', silentnoremap)
+map('n', '<F12>', ':DapStepOut <CR>', silentnoremap)
+map('n', '<Leader>b', ':DapToggleBreakpoint <CR>', silentnoremap)
+map('n', '<Leader>dr', ':DapToggleRepl <CR>', silentnoremap)
+map('n', '<Leader>dl', ":lua require'dap'.run_last() <CR>", silentnoremap)

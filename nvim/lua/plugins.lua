@@ -48,9 +48,26 @@ return require('packer').startup(function(use)
     run = ':TSUpdate'
   }
 
-  -- debugger
+  -- debugging
   use { 'mfussenegger/nvim-dap' }
+  use { 'leoluz/nvim-dap-go' } -- golang default config
 
-  -- nvim-dap golang config
-  use { 'leoluz/nvim-dap-go' }
+
+  ------ Setup plugins ------
+
+  -- nvim-tree
+  require("nvim-tree").setup()
+
+  -- Comment.nvim
+  require('Comment').setup()
+
+  -- Visuals
+  require('gruvbox').setup()
+
+  -- nvim-treesitter
+  require('nvim-treesitter').setup()
+
+  -- nvim-dap golang
+  require('dap-go').setup()
+
 end)
