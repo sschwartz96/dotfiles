@@ -2,8 +2,16 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+  -------------------------- General Tooling ------------------------------
+
   -- plenary.nvim
   use "nvim-lua/plenary.nvim"
+
+  -- tree-sitter
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+  }
 
   -- Configurations for Nvim LSP
   use 'neovim/nvim-lspconfig'
@@ -19,47 +27,46 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
 
+  -- commenting
+  use 'numToStr/Comment.nvim'
+
+  -- auto pairs
+  use 'windwp/nvim-autopairs'
+
+  -- debugging
+  use 'mfussenegger/nvim-dap'
+
+
+  ------------------------------- Visuals ---------------------------------
+
   -- icons for fzf and nvim-tree
   use 'kyazdani42/nvim-web-devicons'
-
-  -- fzf
-  use 'ibhagwan/fzf-lua'
 
   -- gruvbox
   use 'ellisonleao/gruvbox.nvim'
 
+
+  ------------------------------- Naviation --------------------------------
+
+  -- fzf
+  use 'ibhagwan/fzf-lua'
+
   -- file tree
-  use {
-    'kyazdani42/nvim-tree.lua',
-    requires = {
-      'kyazdani42/nvim-web-devicons', -- optional, for file icons
-    },
-    tag = 'nightly' -- optional, updated every week. (see issue #1193)
-  }
+  use { 'kyazdani42/nvim-tree.lua', tag = 'nightly' }
+
+
+  ---------------------------- Language Support ----------------------------
 
   -- go tooling
-  use { "olexsmir/gopher.nvim" }
+  use "olexsmir/gopher.nvim"
 
   -- web / svelte
-  use { 'leafOfTree/vim-svelte-plugin' }
-  use { 'leafgarland/typescript-vim' }
-  use { 'cakebaker/scss-syntax.vim' }
-
-  -- commenting
-  use 'numToStr/Comment.nvim'
-
-  -- tree-sitter
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
-  }
-
-  -- debugging
-  use { 'mfussenegger/nvim-dap' }
-  use { 'leoluz/nvim-dap-go' } -- golang default config
+  use 'leafOfTree/vim-svelte-plugin'
+  use 'leafgarland/typescript-vim'
+  use 'cakebaker/scss-syntax.vim'
 
 
-  ------ Setup plugins ------
+  ----------------------------- Setup plugins -----------------------------
 
   -- nvim-tree
   require("nvim-tree").setup()
@@ -84,4 +91,6 @@ return require('packer').startup(function(use)
     }
   }
 
+  -- nvim-autopairs
+  require("nvim-autopairs").setup({})
 end)

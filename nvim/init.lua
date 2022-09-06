@@ -43,7 +43,7 @@ map('n', '<space>b', ':FzfLua buffers<CR>', silentnoremap)
 
 map('i', 'jk', '<Esc>', silentnoremap)
 map('n', '<leader>t', ':NvimTreeToggle<cr>', silentnoremap)
-map('n', '<leader>c', ':ccl<cr>', silentnoremap)
+map('n', '<leader>c', ':ccl<cr> :lcl<cr>', silentnoremap)
 
 local function vsnip_jump()
   if vim.fn['vsnip#available(1)'] then
