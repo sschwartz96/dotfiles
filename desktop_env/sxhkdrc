@@ -187,6 +187,10 @@ super + Print
 super + t
 	birdtray -t
 
+# rofi-clipboard manager greenclip
+super + v
+	rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+
 # mouse middle button scroll
 super + shift + m
 	xinput --set-prop "pointer:Logitech G Pro Gaming Mouse" "libinput Scroll Method Enabled" 0, 0, 1

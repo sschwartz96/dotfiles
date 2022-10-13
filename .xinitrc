@@ -33,10 +33,8 @@ fi
 xset r rate 200 60
 
 # don't swap on desktop due to new keyboard
-if [ "$HOST" = "sam-lap" ]
-then
-	# swap esc and caps lock
-	setxkbmap -option caps:swapescape
+if [ "$HOSTNAME" = "sam-lap" ] ; then
+	setxkbmap -option caps:swapescape # swap esc and caps lock
 fi
 
 # alt + hjkl {left down up left}
@@ -64,6 +62,10 @@ xset dpms 0 0 6000
 # screensaver
 xscreensaver &
 caffeine &
+
+# greenclip for clipboard management with rofi
+# installed from aur under rofi-greenclip
+greenclip daemon &
 
 # start window manager
 #exec dwm
