@@ -148,7 +148,7 @@ super + Right
 	media next
 
 ctrl + shift + 2
-	/home/sam/bin/switch_audio.sh 2 && pulseeffects
+	/home/sam/bin/switch_audio.sh 2 && easyeffects
 
 ctrl + shift + {0-9}
 	/home/sam/bin/switch_audio.sh {0-9}

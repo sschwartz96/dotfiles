@@ -46,8 +46,11 @@ fi
 # start various programs in the background
 feh --bg-center pictures/background.jpg &
 feh-blur --blur 4 --darken 0 -d
-# need to kill pulseaudio first and restart so it recognizes all screens
-pkill pulseaudio && pulseaudio --start &
+# pipewire for audio
+pipewire &
+pipewire-pulse &
+wireplumber &
+
 picom &
 redshift -l 36.15:-97.38 &
 ntfd & # weather for polybar
