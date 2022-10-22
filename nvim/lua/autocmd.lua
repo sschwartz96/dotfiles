@@ -26,6 +26,6 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     if (string.match(string.sub(filename, -3, -1), '.go')) then
       goimports.goimports(1000)
     end
-    vim.lsp.buf.formatting_sync()
+    vim.lsp.buf.format()
   end,
 })

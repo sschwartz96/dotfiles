@@ -30,6 +30,9 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, bufopts)
   vim.keymap.set('n', ']d', vim.diagnostic.goto_next, bufopts)
   vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, bufopts)
+
+  -- aerial (outline support)
+  require("aerial").on_attach(client, bufnr)
 end
 
 local lspconfig = require('lspconfig')

@@ -129,6 +129,9 @@ export CHROME_EXECUTABLE=google-chrome-stable
 export CMAKE_CXX_COMPILER=/usr/bin/g++
 # dart sdk
 export DART_SDK=~/github.com/flutter/bin/cache/dart-sdk/bin
+# pnpm
+export PNPM_HOME="/home/sam/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
 
 ########## END variables ########## 
 
@@ -154,3 +157,8 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 autoload -U +X bashcompinit && bashcompinit
 #complete -o nospace -C /home/sam/go/bin/bitcomplete bit
+
+# pnpm
+export PNPM_HOME="/home/sam/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
