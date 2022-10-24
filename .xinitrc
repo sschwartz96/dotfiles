@@ -49,7 +49,7 @@ pipewire &
 pipewire-pulse &
 wireplumber &
 
-picom &
+picom --fading --fade-delta=5 &
 redshift -l 36.15:-97.38 &
 ntfd & # weather for polybar
 #sxhkd > /home/sam/.config/sxhkd/sxhkd.log &
