@@ -81,6 +81,7 @@ alias lt='lsd --tree --group-dirs first'
 alias go='richgo'
 # etc
 alias file-explorer='thunar'
+alias lg='lazygit'
 ########## END aliases ########## 
 
 
