@@ -69,7 +69,8 @@ cursor-scroll = ns-resize
 
 
 [bar/top]
-monitor = ${env:TOP_MONITOR:DP-5}
+#monitor = ${env:TOP_MONITOR:DP-5}
+monitor = ${env:TOP_MONITOR:DisplayPort-0}
 width = 100%
 height = 27
 radius = 6.0
@@ -110,7 +111,8 @@ cursor-click = pointer
 cursor-scroll = ns-resize
 
 [bar/bottom]
-monitor = ${env:BOTTOM_MONITOR:DP-2.8}
+# monitor = ${env:BOTTOM_MONITOR:DP-2.8}
+monitor = ${env:BOTTOM_MONITOR:DisplayPort-2}
 width = 100%
 height = 27
 radius = 6.0
@@ -146,6 +148,9 @@ override-redirect = true
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+#tray-position = right
+#tray-padding = 2
 
 [module/xwindow]
 type = internal/xwindow
