@@ -35,6 +35,9 @@ xset r rate 200 60
 # don't swap on desktop due to new keyboard
 if [ "$HOSTNAME" = "sam-lap" ] ; then
 	setxkbmap -option caps:swapescape # swap esc and caps lock
+
+	# libinput-gestures for touchpad swipes
+	libinput-gestures &
 fi
 
 # alt + hjkl {left down up left}
