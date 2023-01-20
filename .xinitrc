@@ -1,3 +1,6 @@
+# autorandr to upddate the display configuration
+autorandr --change
+
 # mouse settings
 xinput --set-prop "pointer:Logitech G Pro Gaming Mouse" "libinput Accel Speed" -1
 xinput --set-prop "pointer:Logitech G Pro Gaming Mouse" "Coordinate Transformation Matrix" 2.100000, 0.000000, 0.000000, 0.000000, 2.100000, 0.000000, 0.000000, 0.000000, 1.000000
@@ -67,7 +70,6 @@ xset dpms 0 0 6000
 
 # screensaver
 xscreensaver &
-caffeine &
 
 # greenclip for clipboard management with rofi
 # installed from aur under rofi-greenclip
