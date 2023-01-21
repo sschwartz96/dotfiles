@@ -163,3 +163,6 @@ autoload -U +X bashcompinit && bashcompinit
 export PNPM_HOME="/home/sam/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+# rust config
+source "$HOME/.cargo/env"
