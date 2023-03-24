@@ -51,6 +51,9 @@ return require('packer').startup(function(use)
   -- gruvbox
   use 'ellisonleao/gruvbox.nvim'
 
+  -- smooth scrolling
+  use 'karb94/neoscroll.nvim'
+
 
   ------------------------------- Naviation --------------------------------
 
@@ -119,5 +122,10 @@ return require('packer').startup(function(use)
 
   -- surround
   require("nvim-surround").setup({})
+
+  -- neoscroll (smooth scrolling)
+  require("neoscroll").setup({
+    hide_cursor = false,
+  })
 
 end)
