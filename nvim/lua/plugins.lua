@@ -142,6 +142,8 @@ return require('packer').startup(function(use)
         { git_blame.get_current_blame_text, cond = git_blame.is_blame_text_available }
       }
     }
+  })
+
   -- neoscroll (smooth scrolling)
   require("neoscroll").setup({
     hide_cursor = false,
