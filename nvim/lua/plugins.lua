@@ -42,6 +42,9 @@ return require('packer').startup(function(use)
     tag = "*", -- Use for stability; omit to use `main` branch for the latest features
   })
 
+  -- git blame
+  use 'f-person/git-blame.nvim'
+
 
   ------------------------------- Visuals ---------------------------------
 
@@ -51,8 +54,11 @@ return require('packer').startup(function(use)
   -- gruvbox
   use 'ellisonleao/gruvbox.nvim'
 
+  -- status line
+  use 'nvim-lualine/lualine.nvim'
 
-  ------------------------------- Naviation --------------------------------
+
+  ------------------------------- Navigation --------------------------------
 
   -- fzf
   use 'ibhagwan/fzf-lua'
@@ -119,5 +125,20 @@ return require('packer').startup(function(use)
 
   -- surround
   require("nvim-surround").setup({})
+
+  -- git blame
+  vim.g.gitblame_display_virtual_text = 0 -- Disable virtual text
+
+  -- status line
+  require('lualine').setup({})
+  local git_blame = require('gitblame')
+
+  require('lualine').setup({
+    sections = {
+      lualine_c = {
+        { git_blame.get_current_blame_text, cond = git_blame.is_blame_text_available }
+      }
+    }
+  })
 
 end)
