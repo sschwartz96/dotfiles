@@ -1,6 +1,6 @@
 --local capabilities = vim.lsp.protocol.make_client_capabilities()
 --capabilities.textDocument.completion.completionItem.snippetSupport = true
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -33,8 +33,6 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', ']d', vim.diagnostic.goto_next, bufopts)
   vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, bufopts)
 
-  -- aerial (outline support)
-  require("aerial").on_attach(client, bufnr)
 end
 
 local lspconfig = require('lspconfig')
