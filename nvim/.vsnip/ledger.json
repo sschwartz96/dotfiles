@@ -1,0 +1,21 @@
+{
+  "invoice": {
+    "prefix": ["invoice"],
+    "body": [
+      "2022/$1/$2 invoice ${3:####} - ${4:description}",
+	  "\tAssets:Accounts Receivable\t\t$5 USD",
+	  "\tIncome:Revenue"
+    ],
+    "description": "Enter invoice."
+  },
+
+  "payment_novo": {
+    "prefix": ["payment_novo"],
+    "body": [
+      "2022/$1/$2 payment ${3:####} - ${4:description}",
+	  "\tAssets:Checking:Novo\t\t$5 USD",
+	  "\tAssets:Accounts Receivable"
+    ],
+    "description": "Enter payment depositted at novo."
+  }
+}

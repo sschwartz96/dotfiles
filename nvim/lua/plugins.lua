@@ -83,6 +83,8 @@ return require('packer').startup(function(use)
   use 'leafgarland/typescript-vim'
   use 'cakebaker/scss-syntax.vim'
 
+  -- ledger
+  use 'ledger/vim-ledger'
 
   ----------------------------- Setup plugins -----------------------------
 
@@ -149,4 +151,6 @@ return require('packer').startup(function(use)
     hide_cursor = false,
   })
 
+  -- vsnip location
+  vim.g.vsnip_snippet_dir = '/home/sam/dotfiles/nvim/.vsnip'
 end)
