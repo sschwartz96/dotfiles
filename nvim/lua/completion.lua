@@ -60,9 +60,9 @@ cmp.setup({
     { name = 'nvim_lsp', keyword_length = 3, max_item_count = 33 },
 
     -- For vsnip user.
-    { name = 'vsnip', keyword_length = 2 },
-    { name = 'buffer', keyword_length = 2, },
-    { name = 'path', keyword_length = 1, },
+    { name = 'vsnip' },
+    { name = 'buffer',   keyword_length = 2, },
+    { name = 'path',     keyword_length = 1, },
   }
 })
 

@@ -42,6 +42,9 @@ return require('packer').startup(function(use)
     tag = "*", -- Use for stability; omit to use `main` branch for the latest features
   })
 
+  -- git blame
+  use 'f-person/git-blame.nvim'
+
 
   ------------------------------- Visuals ---------------------------------
 
@@ -51,11 +54,14 @@ return require('packer').startup(function(use)
   -- gruvbox
   use 'ellisonleao/gruvbox.nvim'
 
+  -- status line
+  use 'nvim-lualine/lualine.nvim'
+
   -- smooth scrolling
   use 'karb94/neoscroll.nvim'
 
 
-  ------------------------------- Naviation --------------------------------
+  ------------------------------- Navigation --------------------------------
 
   -- fzf
   use 'ibhagwan/fzf-lua'
@@ -77,6 +83,8 @@ return require('packer').startup(function(use)
   use 'leafgarland/typescript-vim'
   use 'cakebaker/scss-syntax.vim'
 
+  -- ledger
+  use 'ledger/vim-ledger'
 
   ----------------------------- Setup plugins -----------------------------
 
@@ -123,9 +131,26 @@ return require('packer').startup(function(use)
   -- surround
   require("nvim-surround").setup({})
 
+  -- git blame
+  vim.g.gitblame_display_virtual_text = 0 -- Disable virtual text
+
+  -- status line
+  require('lualine').setup({})
+  local git_blame = require('gitblame')
+
+  require('lualine').setup({
+    sections = {
+      lualine_c = {
+        { git_blame.get_current_blame_text, cond = git_blame.is_blame_text_available }
+      }
+    }
+  })
+
   -- neoscroll (smooth scrolling)
   require("neoscroll").setup({
     hide_cursor = false,
   })
 
+  -- vsnip location
+  vim.g.vsnip_snippet_dir = '/home/sam/dotfiles/nvim/.vsnip'
 end)
