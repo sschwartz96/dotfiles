@@ -23,7 +23,7 @@ require('completion')
 
 vim.o.termguicolors = true
 vim.cmd('colorscheme gruvbox')
-vim.o.background = "dark" -- or "light" for light mode
+vim.o.background = "dark"                  -- or "light" for light mode
 vim.g.vim_svelte_plugin_use_typescript = 1 -- enables typescript syntax in .svelte files
 
 
@@ -74,3 +74,5 @@ map('n', '<F12>', ':DapStepOut <CR>', silentnoremap)
 map('n', '<Leader>b', ':DapToggleBreakpoint <CR>', silentnoremap)
 map('n', '<Leader>dr', ':DapToggleRepl <CR>', silentnoremap)
 map('n', '<Leader>dl', ":lua require'dap'.run_last() <CR>", silentnoremap)
+
+map('n', '<Leader>du', ":lua require'dapui'.toggle() <CR>", silentnoremap)

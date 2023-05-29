@@ -35,6 +35,9 @@ return require('packer').startup(function(use)
 
   -- debugging
   use 'mfussenegger/nvim-dap'
+  use 'leoluz/nvim-dap-go'
+  use 'rcarriga/nvim-dap-ui'
+  use 'theHamsta/nvim-dap-virtual-text'
 
   -- surround
   use({
@@ -100,16 +103,11 @@ return require('packer').startup(function(use)
   -- nvim-treesitter
   require('nvim-treesitter').setup()
 
-  -- nvim-dap golang
-  -- require('dap-go').setup()
-  require('dap').adapters.go = {
-    type = 'server',
-    port = '${port}',
-    executable = {
-      command = 'dlv',
-      args = { 'dap', '-l', '127.0.0.1:${port}' },
-    }
-  }
+  -- dap - debugging setup
+  require('dap-go').setup()
+  require('dap.ext.vscode').load_launchjs(nil, {})
+  require('dapui').setup()
+  require('nvim-dap-virtual-text').setup({})
 
   -- nvim-autopairs
   require("nvim-autopairs").setup({})
