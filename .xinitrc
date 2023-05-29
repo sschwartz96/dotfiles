@@ -1,3 +1,5 @@
+sleep 1
+
 # mouse settings
 xinput --set-prop "pointer:Logitech G Pro Gaming Mouse" "libinput Accel Speed" -1
 xinput --set-prop "pointer:Logitech G Pro Gaming Mouse" "Coordinate Transformation Matrix" 2.100000, 0.000000, 0.000000, 0.000000, 2.100000, 0.000000, 0.000000, 0.000000, 1.000000

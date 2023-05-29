@@ -33,3 +33,5 @@ bspc rule -a zoom state=floating
 bspc rule -a "zoom " state=floating
 bspc rule -a "vmware-view" state=floating
 bspc rule -a "Vmware-view" state=floating
+
+bspc rule -a "Shutter" state=floating
