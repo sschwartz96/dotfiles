@@ -17,5 +17,16 @@
 	  "\tAssets:Accounts Receivable"
     ],
     "description": "Enter payment depositted at novo."
+  },
+
+  "expense_cogs_amex": {
+    "prefix": ["expense_cogs_amex"],
+    "body": [
+      "2022/$1/$2 ${3:description}",
+	  "\tExpenses:COGS\t\t$5 USD",
+	  "\tLiabilities:AMEX"
+    ],
+    "description": "Enter cost of goods expense put on amex card"
   }
+
 }
