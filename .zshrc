@@ -100,6 +100,8 @@ export PATH=$PATH:~/bin/android-studio-dir/jre
 #for python-pip
 export PATH=$PATH:/home/sam/.local/bin
 export PATH=$PATH:/home/sam/github.com/protobuf.dart/protoc_plugin/bin
+# for pnpm packages
+export PATH=$PATH:/home/sam/.local/share/pnpm/
 
 
 # VARIABLES 
@@ -111,7 +113,7 @@ export GO111MODULE=on
 #export GOPATH=~/go
 export SYNCAPOD_OLD=~/go/src/github.com/sschwartz96/syncapod
 export SYNCAPOD=~/projects/syncapod
-export BROWSER="/home/sam/bin/chrome"
+export BROWSER="/usr/bin/firefox"
 export TERM="xterm-256color"
 export EDITOR="nvim"
 

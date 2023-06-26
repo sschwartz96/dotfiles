@@ -1,7 +1,7 @@
 local goimports = require('goimports')
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "lua", "dart" },
+  pattern = { "lua", "dart", "proto" },
   callback = function()
     --local data = {
     --  buf = vim.fn.expand("<abuf>"),
