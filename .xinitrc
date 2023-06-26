@@ -68,7 +68,7 @@ xrdb -merge ~/.Xresources
 xset dpms 0 0 6000
 
 # screensaver
-xscreensaver &
+#xscreensaver &
 
 # greenclip for clipboard management with rofi
 # installed from aur under rofi-greenclip
