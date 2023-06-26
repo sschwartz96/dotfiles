@@ -2,7 +2,7 @@
 
 # requires pnpm and go
 
-pnpm i -g tailwindcss-language-service
+pnpm i -g @tailwindcss/language-server
 pnpm i -g typescript-language-server
 pnpm i -g vscode-langservers-extracted
 
