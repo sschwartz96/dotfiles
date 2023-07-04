@@ -102,6 +102,8 @@ export PATH=$PATH:/home/sam/.local/bin
 export PATH=$PATH:/home/sam/github.com/protobuf.dart/protoc_plugin/bin
 # for pnpm packages
 export PATH=$PATH:/home/sam/.local/share/pnpm/
+# for dart pub executable tools
+export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 
 # VARIABLES 

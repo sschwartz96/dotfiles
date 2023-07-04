@@ -89,6 +89,9 @@ return require('packer').startup(function(use)
   -- ledger
   use 'ledger/vim-ledger'
 
+  -- dart
+  use 'dart-lang/dart-vim-plugin'
+
   ----------------------------- Setup plugins -----------------------------
 
   -- nvim-tree
