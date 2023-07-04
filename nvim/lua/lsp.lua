@@ -111,6 +111,7 @@ lspconfig.dartls.setup({
 -- rust
 lspconfig.rust_analyzer.setup({
   on_attach = on_attach,
+  capabilities = capabilities,
   settings = {
     ["rust-analyzer"] = {
       imports = {
@@ -129,4 +130,10 @@ lspconfig.rust_analyzer.setup({
       },
     }
   }
+})
+
+-- yaml
+lspconfig.yamlls.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
 })

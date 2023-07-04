@@ -2,6 +2,7 @@
 
 # requires pnpm and go
 
+pnpm i -g yaml-language-server
 pnpm i -g svelte-language-server
 pnpm i -g @tailwindcss/language-server
 pnpm i -g typescript-language-server

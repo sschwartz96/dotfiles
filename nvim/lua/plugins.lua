@@ -63,6 +63,9 @@ return require('packer').startup(function(use)
   -- smooth scrolling
   use 'karb94/neoscroll.nvim'
 
+  -- function signature hint
+  use 'ray-x/lsp_signature.nvim'
+
 
   ------------------------------- Navigation --------------------------------
 
@@ -151,4 +154,7 @@ return require('packer').startup(function(use)
 
   -- vsnip location
   vim.g.vsnip_snippet_dir = '/home/sam/dotfiles/nvim/.vsnip'
+
+  -- lsp signature
+  require("lsp_signature").setup()
 end)
