@@ -1,164 +1,204 @@
-return require('packer').startup(function(use)
-  -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
+-- setup lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+require("lazy").setup({
 
   -------------------------- General Tooling ------------------------------
 
   -- plenary.nvim
-  use "nvim-lua/plenary.nvim"
+  "nvim-lua/plenary.nvim",
 
-  -- tree-sitter
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
-  }
+  -- treesitter
+  'nvim-treesitter/nvim-treesitter',
 
-  -- Configurations for Nvim LSP
-  use 'neovim/nvim-lspconfig'
+  -- neodev
+  { "folke/neodev.nvim",        opts = {} },
 
-  -- Completions
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/cmp-path'
-  use 'hrsh7th/cmp-cmdline'
-  use 'hrsh7th/nvim-cmp'
+  -- lsp
+  "neovim/nvim-lspconfig",
 
-  -- Snippets
-  use 'hrsh7th/cmp-vsnip'
-  use 'hrsh7th/vim-vsnip'
+  -- utilities
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    init = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+    end,
+    opts = {},
+  },
 
-  -- commenting
-  use 'numToStr/Comment.nvim'
+  -- completion
+  'hrsh7th/cmp-nvim-lsp',
+  'hrsh7th/cmp-buffer',
+  'hrsh7th/cmp-path',
+  'hrsh7th/cmp-cmdline',
+  'hrsh7th/nvim-cmp',
+
+  -- snippets
+  'hrsh7th/cmp-vsnip',
+  'hrsh7th/vim-vsnip',
+
+  -- comment
+  'numToStr/Comment.nvim',
 
   -- auto pairs
-  use 'windwp/nvim-autopairs'
+  {
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    opts = {} -- this is equalent to setup({}) function
+  },
+
 
   -- debugging
-  use 'mfussenegger/nvim-dap'
-  use 'leoluz/nvim-dap-go'
-  use 'rcarriga/nvim-dap-ui'
-  use 'theHamsta/nvim-dap-virtual-text'
+  'mfussenegger/nvim-dap',
+  'leoluz/nvim-dap-go',
+  'rcarriga/nvim-dap-ui',
+  'theHamsta/nvim-dap-virtual-text',
 
   -- surround
-  use({
+  {
     "kylechui/nvim-surround",
-    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
-  })
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup({
+        -- Configuration here, or leave empty to use defaults
+      })
+    end
+  },
 
   -- git blame
-  use 'f-person/git-blame.nvim'
-
+  'f-person/git-blame.nvim',
 
   ------------------------------- Visuals ---------------------------------
 
-  -- icons for fzf and nvim-tree
-  use 'kyazdani42/nvim-web-devicons'
+  ---- color schemes ----
 
   -- gruvbox
-  use 'ellisonleao/gruvbox.nvim'
+  { "ellisonleao/gruvbox.nvim", priority = 1000 },
+
+  -- tokyonight
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
+
+  -- icons for fzf and nvim-tree
+  'kyazdani42/nvim-web-devicons',
 
   -- status line
-  use 'nvim-lualine/lualine.nvim'
+  'nvim-lualine/lualine.nvim',
 
   -- smooth scrolling
-  use 'karb94/neoscroll.nvim'
+  { 'karb94/neoscroll.nvim', event = "VeryLazy" },
 
   -- function signature hint
-  use 'ray-x/lsp_signature.nvim'
-
+  'ray-x/lsp_signature.nvim',
 
   ------------------------------- Navigation --------------------------------
 
   -- fzf
-  use 'ibhagwan/fzf-lua'
+  'ibhagwan/fzf-lua',
 
   -- file tree
-  use { 'kyazdani42/nvim-tree.lua', tag = 'nightly' }
+  'kyazdani42/nvim-tree.lua',
 
   -- outline
-  use { 'stevearc/aerial.nvim' }
-
+  'stevearc/aerial.nvim',
 
   ---------------------------- Language Support ----------------------------
 
   -- go tooling
-  -- use "olexsmir/gopher.nvim"
-  use "ray-x/go.nvim"
+  {
+    "ray-x/go.nvim",
+    event = { "CmdlineEnter" },
+    ft = { "go", 'gomod' },
+    build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
+    opts = {},
+  },
+
 
   -- web / svelte
-  use 'leafOfTree/vim-svelte-plugin'
-  use 'leafgarland/typescript-vim'
-  use 'cakebaker/scss-syntax.vim'
+  'leafOfTree/vim-svelte-plugin',
+  -- 'leafgarland/typescript-vim',
+  -- 'cakebaker/scss-syntax.vim',
 
   -- ledger
-  use 'ledger/vim-ledger'
+  'ledger/vim-ledger',
 
   -- dart
-  use 'dart-lang/dart-vim-plugin'
+  'dart-lang/dart-vim-plugin',
 
-  ----------------------------- Setup plugins -----------------------------
 
-  -- nvim-tree
-  require("nvim-tree").setup()
+})
 
-  -- Comment.nvim
-  require('Comment').setup()
+----------------------------- Setup plugins -----------------------------
 
-  -- Visuals
-  require('gruvbox').setup()
+-- nvim-tree
+require("nvim-tree").setup()
 
-  -- nvim-treesitter
-  require('nvim-treesitter').setup()
+-- Comment.nvim
+require('Comment').setup()
 
-  -- dap - debugging setup
-  require('dap-go').setup()
-  require('dap.ext.vscode').load_launchjs(nil, {})
-  require('dapui').setup()
-  require('nvim-dap-virtual-text').setup({})
+-- Visuals
+require('gruvbox').setup()
 
-  -- nvim-autopairs
-  require("nvim-autopairs").setup({})
+-- nvim-treesitter
+require('nvim-treesitter').setup()
 
-  -- aerial outline
-  require('aerial').setup({
-    on_attach = function(bufnr)
-      -- Toggle the aerial window with <leader>a
-      vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>a', '<cmd>AerialToggle!<CR>', {})
-      -- Jump forwards/backwards with '{' and '}'
-      vim.api.nvim_buf_set_keymap(bufnr, 'n', '{', '<cmd>AerialPrev<CR>', {})
-      vim.api.nvim_buf_set_keymap(bufnr, 'n', '}', '<cmd>AerialNext<CR>', {})
-    end
-  })
+-- dap - debugging setup
+require('dap-go').setup()
+require('dap.ext.vscode').load_launchjs(nil, {})
+require('dapui').setup()
+require('nvim-dap-virtual-text').setup({})
 
-  -- surround
-  require("nvim-surround").setup({})
+-- aerial outline
+require('aerial').setup({
+  on_attach = function(bufnr)
+    -- Toggle the aerial window with <leader>a
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>a', '<cmd>AerialToggle!<CR>', {})
+    -- Jump forwards/backwards with '{' and '}'
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '{', '<cmd>AerialPrev<CR>', {})
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '}', '<cmd>AerialNext<CR>', {})
+  end
+})
 
-  -- git blame
-  vim.g.gitblame_display_virtual_text = 0 -- Disable virtual text
+-- git blame
+vim.g.gitblame_display_virtual_text = 0 -- Disable virtual text
 
-  -- status line
-  require('lualine').setup({})
-  local git_blame = require('gitblame')
+-- status line
+require('lualine').setup({})
+local git_blame = require('gitblame')
 
-  require('lualine').setup({
-    sections = {
-      lualine_c = {
-        { git_blame.get_current_blame_text, cond = git_blame.is_blame_text_available }
-      }
+require('lualine').setup({
+  sections = {
+    lualine_c = {
+      { git_blame.get_current_blame_text, cond = git_blame.is_blame_text_available }
     }
-  })
+  }
+})
 
-  -- neoscroll (smooth scrolling)
-  require("neoscroll").setup({
-    hide_cursor = false,
-  })
+-- neoscroll (smooth scrolling)
+require("neoscroll").setup({
+  hide_cursor = false,
+})
 
-  -- vsnip location
-  vim.g.vsnip_snippet_dir = '/home/sam/dotfiles/nvim/.vsnip'
+-- vsnip location
+vim.g.vsnip_snippet_dir = '/home/sam/dotfiles/nvim/.vsnip'
 
-  -- lsp signature
-  require("lsp_signature").setup()
-
-  -- go.nvim
-  require("go").setup()
-end)
+-- lsp signature
+require("lsp_signature").setup()
