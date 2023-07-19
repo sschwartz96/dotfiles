@@ -6,6 +6,11 @@
 #
 #####
 
+mkdir ~/.config
+old_pwd = $PWD
+
+mkdir ~/.config/polybar/
+mkdir ~/.config/dunstrc
 
 # nvim
 ln -s $PWD/nvim/ ~/.config/nvim
