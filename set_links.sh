@@ -22,6 +22,7 @@ ln -s $PWD/desktop_env/picom.conf ~/.config/picom/picom.conf
 ln -s $PWD/desktop_env/config ~/.config/polybar/config
 ln -s $PWD/desktop_env/alacritty.yml ~/.config/alacritty/alacritty.yml
 ln -s $PWD/desktop_env/config.rasi ~/.config/rofi/config.rasi
+ln -s $PWD/desktop_env/dunstrc ~/.config/dunst/dunstrc
 
 # scripts
 ln -s $PWD/scripts/rclone-sync.sh ~/scripts/

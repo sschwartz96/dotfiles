@@ -10,5 +10,6 @@ picom			/home/sam/.config/picom/picom.conf
 alacritty		/home/sam/.config/alacritty/alacritty.yml
 polybar			/home/sam/.config/polybar/config
 rofi			/home/sam/.config/rofi/config.rasi
+rofi			/home/sam/.config/dunst/dunstrc
 xscreensaver	/home/sam/.xscreensaver
 ledger			/home/sam/gdrive/Documents&Bookkeeping/2021/schwartzit_2021.ledger
