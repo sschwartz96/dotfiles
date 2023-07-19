@@ -114,41 +114,44 @@ super + ctrl + {h,j,k,l}
 # Brightness
 
 XF86MonBrightnessUp
-	brightness +5%
+	xbacklight -inc 5
+	# brightness +5%
 
 XF86MonBrightnessDown
-	brightness -5%
+	xbacklight -dec 5
+	# brightness -5%
 
 ctrl + Down
-	brightness 1
+	xbacklight -set 1
+	# brightness 1
 
 
 # Volume
 XF86AudioRaiseVolume
-	volume +5
+	pamixer -i 5
 
 XF86AudioLowerVolume
-	volume -5
+	pamixer -d 5
 
 
 # playerctl
 XF86AudioPlay
-	media play-pause
+	playerctl play-pause
 
 super + m
-	media play-pause
+	playerctl play-pause
 
 super + Down
-	media pause
+	playerctl pause
 
 super + Up
-	media play
+	playerctl play
 
 super + Left
-	media previous
+	playerctl previous
 
 super + Right 
-	media next
+	playerctl next
 
 ctrl + shift + 2
 	/home/sam/bin/switch_audio.sh 2 && easyeffects
@@ -177,6 +180,14 @@ super + w
 # start rofi-calc
 super + c
 	rofi -show calc -modi calc -no-show-match -no-sort
+
+# start rofi-connman
+super + n
+	rofi-connman
+
+# start rofi-connman
+super + b
+	rofi-bluetooth
 
 # start terminal
 super + shift + Return

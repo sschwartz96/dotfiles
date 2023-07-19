@@ -8,6 +8,11 @@ then
 	bspc monitor eDP1 -d 1 2 3 4 7 8 9 0
 	polybar laptop &
 	bspc config top_padding 30
+elif [ "$HOST" = "lenovo-artix" ]
+then
+	bspc monitor eDP -d 1 2 3 4 7 8 9 0
+	polybar lenovo &
+	bspc config top_padding 30
 else
 	echo "$HOST"
 	# set up multi-monitor

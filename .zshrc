@@ -40,8 +40,9 @@ _fix_cursor() {
 }
 precmd_functions+=(_fix_cursor)
 
-# auto suggestions
-source ~/github.com/zsh-autosuggestions/zsh-autosuggestions.zsh
+# zsh syntax highlighting and auto suggestions
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_STRATEGY=(history)
 #ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
 #history
@@ -138,14 +139,21 @@ export DART_SDK=~/github.com/flutter/bin/cache/dart-sdk/bin
 export PNPM_HOME="/home/sam/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 
+# manpage to use bat
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANROFFOPT="-c"
+
+# enables touchpad support for firefox
+export MOZ_USE_XINPUT2=1
+
+# used by rofi-connman to center the window
+export ROFI_COMMAND="rofi -dmenu -no-fixed-num-lines -no-custom -i -p"
+
 ########## END variables ########## 
 
 # fzf
 #export FZF_DEFAULT_COMMAND="find -L" # finds hidden files too
 export FZF_DEFAULT_COMMAND="rg --files --hidden --iglob '!node_modules' --iglob '!.git'"
-
-# zsh syntax
-. /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # docker completion
 fpath=(~/.zsh/completion $fpath)
@@ -160,6 +168,9 @@ if [ "$HOST" = "sam-lapt" ]; then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
+[ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
+
 autoload -U +X bashcompinit && bashcompinit
 #complete -o nospace -C /home/sam/go/bin/bitcomplete bit
 
