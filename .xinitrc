@@ -1,3 +1,5 @@
+#!/bin/bash
+
 sleep 1
 
 # mouse settings
@@ -15,6 +17,19 @@ synclient PalmMinWidth=4
 synclient PalmMinZ=50
 synclient MinSpeed=1.5
 synclient HorizTwoFingerScroll=1
+
+if [ "$HOSTNAME" = "lenovo-artix" ]; then
+	xinput --set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1 # enable taps
+	xinput --set-prop "SynPS/2 Synaptics TouchPad" "libinput Natural Scrolling Enabled" 1 # reverse scrolling direction
+	xinput --set-prop "SynPS/2 Synaptics TouchPad" "libinput Accel Speed" 0.25 # increase acceleration
+	# xinput --set-prop "SynPS/2 Synaptics TouchPad" "Coordinate Transformation Matrix" 1.250000, 0.000000, 0.000000, 0.000000, 1.250000, 0.000000, 0.000000, 0.000000, 1.000000
+
+	xrandr --output eDP --set TearFree on # remove screen tearing
+
+	setxkbmap -option caps:swapescape # swap esc and caps lock
+
+	libinput-gestures &
+fi
 
 # set brightness
 xbacklight -set 25
@@ -35,7 +50,8 @@ fi
 xset r rate 200 60
 
 # don't swap on desktop due to new keyboard
-if [ "$HOSTNAME" = "sam-lap" ] ; then
+if [ "$HOSTNAME" = "sam-lap" ]
+then
 	setxkbmap -option caps:swapescape # swap esc and caps lock
 
 	# libinput-gestures for touchpad swipes

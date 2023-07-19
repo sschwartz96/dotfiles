@@ -1,0 +1,22 @@
+### Programs to install from Artix/Arch repos or AUR
+
+zsh
+connman
+
+bspwm
+sxhkd
+
+alacritty
+tmux
+neovim
+
+rofi
+rofi-bluetooth
+rofi-connman
+
+dunst
+polybar
+picom
+
+playerctl
+
