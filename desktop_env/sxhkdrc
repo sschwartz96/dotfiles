@@ -1,4 +1,4 @@
-# reload sxhkd config
+c reload sxhkd config
 ctrl + shift + r
 	pkill sxhkd; sleep 1; sxhkd & disown
 	#killall -SIGUSR1 sxhkd; sleep 1
@@ -8,7 +8,8 @@ super + ctrl + shift + s
 	snooze
 
 super + shift + s
-	sleep 0.25 && scrot --select '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'
+	sleep 0.25 && shutter --select
+	# sleep 0.25 && scrot --select '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'
 
 # 
 # bspc bindings
@@ -212,6 +213,20 @@ super + shift + m
 
 super + shift + n
 	xinput --set-prop "pointer:Logitech G Pro Gaming Mouse" "libinput Scroll Method Enabled" 0, 0, 0
+
+# dunst
+#ctrl + space
+#	dunstctl close
+
+ctrl + shift + space
+	dunstctl close-all
+
+ctrl + Tab
+	dunstctl history-pop
+
+ctrl + shift + period
+	dunstctl context
+
 
 
 ###

@@ -39,6 +39,8 @@ require("lazy").setup({
     opts = {},
   },
 
+  "ellisonleao/dotenv.nvim",
+
   -- completion
   'hrsh7th/cmp-nvim-lsp',
   'hrsh7th/cmp-buffer',
@@ -59,7 +61,6 @@ require("lazy").setup({
     event = "InsertEnter",
     opts = {} -- this is equalent to setup({}) function
   },
-
 
   -- debugging
   'mfussenegger/nvim-dap',
@@ -125,6 +126,7 @@ require("lazy").setup({
   -- go tooling
   {
     "ray-x/go.nvim",
+    dependencies = { "ray-x/guihua.lua" },
     event = { "CmdlineEnter" },
     ft = { "go", 'gomod' },
     build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
@@ -202,3 +204,9 @@ vim.g.vsnip_snippet_dir = '/home/sam/dotfiles/nvim/.vsnip'
 
 -- lsp signature
 require("lsp_signature").setup()
+
+-- dotenv
+require('dotenv').setup({
+  enable_on_load = true, -- will load your .env file upon loading a buffer
+  verbose = false, -- show error notification if .env file is not found and if .env is loaded
+})

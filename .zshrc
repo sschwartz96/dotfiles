@@ -78,11 +78,10 @@ alias l='lsd -l --group-dirs first'
 alias la='lsd -a --group-dirs first'
 alias lla='lsd -la --group-dirs first'
 alias lt='lsd --tree --group-dirs first'
-# richgo 
-alias go='richgo'
 # etc
 alias file-explorer='thunar'
 alias lg='lazygit'
+alias lzd='lazydocker'
 ########## END aliases ########## 
 
 
@@ -181,3 +180,7 @@ export PATH="$PNPM_HOME:$PATH"
 
 # rust config
 source "$HOME/.cargo/env"
+
+# gvm
+source /home/sam/.gvm/scripts/gvm
+gvm use go1.20 >/dev/null 2>&1

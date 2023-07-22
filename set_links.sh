@@ -9,7 +9,7 @@
 mkdir ~/.config
 
 mkdir ~/.config/polybar/
-mkdir ~/.config/dunstrc
+mkdir ~/.config/dunst
 
 # nvim
 ln -s $PWD/nvim/ ~/.config/nvim
