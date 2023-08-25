@@ -211,10 +211,10 @@ super + shift + n
 
 # rotate right display
 super + ctrl + shift + 0
-	xrandr --output DP-5 --rotate right --pos 2560x0 --output DP-2.8 --pos 0x340
+	xrandr --output DisplayPort-0 --rotate right --pos 3440x0 --output DisplayPort-2 --pos 0x200
 	#nvidia-settings --assign CurrentMetaMode="DP-5: 1920x1080 +2560+0 { Rotation=right }, DP-2.8: 2560x1080 +0+340"
 
 # normal
 super + ctrl + shift + 9
-	xrandr --output DP-5 --rotate normal --pos 2560x0 --output DP-2.8 --pos 0x0
+	xrandr --output DisplayPort-0 --rotate normal --pos 3440x0 --output DisplayPort-2 --pos 0x0
 	#nvidia-settings --assign CurrentMetaMode="DP-5: 1920x1080 +2560+0 { Rotation=normal }, DP-2.8: 2560x1080 +0+0"
