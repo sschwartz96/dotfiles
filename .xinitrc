@@ -18,6 +18,7 @@ synclient PalmMinZ=50
 synclient MinSpeed=1.5
 synclient HorizTwoFingerScroll=1
 
+# lenovo-artix only configuration
 if [ "$HOSTNAME" = "lenovo-artix" ]; then
 	xinput --set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1 # enable taps
 	xinput --set-prop "SynPS/2 Synaptics TouchPad" "libinput Natural Scrolling Enabled" 1 # reverse scrolling direction
@@ -29,6 +30,20 @@ if [ "$HOSTNAME" = "lenovo-artix" ]; then
 	setxkbmap -option caps:swapescape # swap esc and caps lock
 
 	libinput-gestures &
+fi
+
+# don't swap on desktop due to new keyboard
+if [ "$HOSTNAME" = "sam-lap" ]
+then
+	setxkbmap -option caps:swapescape # swap esc and caps lock
+
+	# libinput-gestures for touchpad swipes
+	libinput-gestures &
+fi
+
+# desktop only configuration
+if [ "$HOSTNAME" = "sam-artix" ]; then
+	xrandr --output DisplayPort-0 --mode 3440x1440 --rate 143.97
 fi
 
 # set brightness
@@ -46,25 +61,15 @@ if test -z "$DBUS_SESSION_BUS_ADDRESS" ; then
 fi
 
 ### KEYBOARD
+
 # keyboard delay & rate
 xset r rate 200 60
-
-# don't swap on desktop due to new keyboard
-if [ "$HOSTNAME" = "sam-lap" ]
-then
-	setxkbmap -option caps:swapescape # swap esc and caps lock
-
-	# libinput-gestures for touchpad swipes
-	libinput-gestures &
-fi
-
-# alt + hjkl {left down up left}
-#xmodmap ~/.key_maps
 
 
 # start various programs in the background
 feh --bg-center pictures/background.jpg &
 feh-blur --blur 4 --darken 0 -d
+
 # pipewire for audio
 pipewire &
 pipewire-pulse &
@@ -73,7 +78,6 @@ wireplumber &
 picom --fading --fade-delta=5 &
 redshift -l 36.15:-97.38 &
 ntfd & # weather for polybar
-#sxhkd > /home/sam/.config/sxhkd/sxhkd.log &
 #~/scripts/set_status.sh &
 numlockx on
 
@@ -90,8 +94,8 @@ xset dpms 0 0 6000
 # installed from aur under rofi-greenclip
 greenclip daemon &
 
-# autorandr to upddate the display configuration
-autorandr --change
+# autorandr to update the display configuration
+autorandr --change 2023-vert
 
 # start window manager
 #exec dwm
