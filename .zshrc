@@ -9,6 +9,9 @@
 autoload -U colors && colors
 
 # auto complete
+
+# add custom directory
+fpath=(~/dotfiles/zsh_completition/ $fpath)
 setopt auto_cd
 autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*' # corrects capitalization
@@ -82,6 +85,7 @@ alias lt='lsd --tree --group-dirs first'
 alias file-explorer='thunar'
 alias lg='lazygit'
 alias lzd='lazydocker'
+alias gdifft='GIT_EXTERNAL_DIFF=difft git diff'
 ########## END aliases ########## 
 
 
@@ -104,6 +108,8 @@ export PATH=$PATH:/home/sam/github.com/protobuf.dart/protoc_plugin/bin
 export PATH=$PATH:/home/sam/.local/share/pnpm/
 # for dart pub executable tools
 export PATH="$PATH":"$HOME/.pub-cache/bin"
+# for c# / .net
+export PATH="$PATH:/home/sam/.dotnet/tools"
 
 
 # VARIABLES 
@@ -184,3 +190,7 @@ source "$HOME/.cargo/env"
 # gvm
 source /home/sam/.gvm/scripts/gvm
 gvm use go1.20 >/dev/null 2>&1
+
+# tabtab source for packages
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true

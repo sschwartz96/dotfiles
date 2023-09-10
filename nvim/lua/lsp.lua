@@ -137,3 +137,9 @@ lspconfig.yamlls.setup({
   on_attach = on_attach,
   capabilities = capabilities,
 })
+
+-- c# (csharp) / .net (dotnet)
+lspconfig.csharp_ls.setup{
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
