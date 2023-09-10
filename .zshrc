@@ -188,8 +188,11 @@ export PATH="$PNPM_HOME:$PATH"
 source "$HOME/.cargo/env"
 
 # gvm
-source /home/sam/.gvm/scripts/gvm
-gvm use go1.20 >/dev/null 2>&1
+if [ -e /home/sam/.gvm/scripts/gvm ]
+then
+	source /home/sam/.gvm/scripts/gvm
+	gvm use go1.20 >/dev/null 2>&1
+fi
 
 # tabtab source for packages
 # uninstall by removing these lines

@@ -1,5 +1,5 @@
 configuration {
-	monitor: "-1";
+	monitor: "-4";
 	matching: "fuzzy";
 	sorting-method: "fzf";
 	font: "Fira Code 12";
