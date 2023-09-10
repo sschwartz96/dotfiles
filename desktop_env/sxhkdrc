@@ -184,7 +184,7 @@ super + c
 
 # start rofi-connman
 super + n
-	rofi-connman
+	rofi -show "WIFI" -modi "WIFI:iwdrofimenu"
 
 # start rofi-connman
 super + b
