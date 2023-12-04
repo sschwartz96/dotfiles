@@ -2,11 +2,6 @@
 
 sleep 1
 
-# mouse settings
-xinput --set-prop "pointer:Logitech G Pro Gaming Mouse" "libinput Accel Speed" -1
-xinput --set-prop "pointer:Logitech G Pro Gaming Mouse" "Coordinate Transformation Matrix" 2.100000, 0.000000, 0.000000, 0.000000, 2.100000, 0.000000, 0.000000, 0.000000, 1.000000
-xinput --set-prop "pointer:Logitech G Pro Gaming Mouse" "libinput Scroll Method Enabled" 0, 0, 1
-
 # set trackpad settings
 synclient VertScrollDelta=-66	# natural scrolling
 synclient TapAndDragGesture=1
@@ -43,6 +38,11 @@ fi
 
 # desktop only configuration
 if [ "$HOSTNAME" = "sam-artix" ]; then
+	# mouse settings
+	xinput --set-prop "pointer:Logitech G Pro Gaming Mouse" "libinput Accel Speed" -1
+	xinput --set-prop "pointer:Logitech G Pro Gaming Mouse" "Coordinate Transformation Matrix" 2.100000, 0.000000, 0.000000, 0.000000, 2.100000, 0.000000, 0.000000, 0.000000, 1.000000
+	xinput --set-prop "pointer:Logitech G Pro Gaming Mouse" "libinput Scroll Method Enabled" 0, 0, 1
+
 	xrandr --output DisplayPort-0 --mode 3440x1440 --rate 143.97
 fi
 
@@ -60,11 +60,8 @@ if test -z "$DBUS_SESSION_BUS_ADDRESS" ; then
   echo "D-Bus per-session daemon address is: $DBUS_SESSION_BUS_ADDRESS"
 fi
 
-### KEYBOARD
-
 # keyboard delay & rate
 xset r rate 200 60
-
 
 # start various programs in the background
 feh --bg-center pictures/background.jpg &
