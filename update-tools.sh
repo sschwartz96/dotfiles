@@ -6,7 +6,7 @@
 
 GREEN='\033[0;32m'
 NC='\033[0m' # No Color
-
+npm i -g vscode-langservers-extracted
 node_packages=("pnpm" "yaml-language-server" "svelte-language-server" "@tailwindcss/language-server" "typescript-language-server" "vscode-langservers-extracted")
 
 for p in ${node_packages[@]}; do

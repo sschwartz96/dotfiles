@@ -25,9 +25,9 @@ vim.o.termguicolors = true
 
 -- sign_partial_hl = "WarningMsg",
 require("gruvbox").setup({
-    overrides = {
-      WarningMsg = { link = "GruvboxOrangeBold" },
-    }
+  overrides = {
+    WarningMsg = { link = "GruvboxOrangeBold" },
+  }
 })
 vim.cmd('colorscheme gruvbox')
 vim.o.background = "dark"                  -- or "light" for light mode
@@ -41,6 +41,16 @@ end
 
 local silentnoremap = { noremap = true, silent = true }
 
+function _G.toggle_location_list()
+  -- first argument is 0 for current window, it could be window id
+  local winid = vim.fn.getloclist(0, { winid = 0 }).winid
+
+  if winid == 0 then
+    vim.cmd.lopen()
+  else
+    vim.cmd.lclose()
+  end
+end
 
 -- fzf
 map('n', '<space><space>', ':FzfLua<CR>', silentnoremap)
@@ -48,9 +58,13 @@ map('n', '<C-p>', ':FzfLua files<CR>', silentnoremap)
 map('n', '<space>p', ':FzfLua files<CR>', silentnoremap)
 map('n', '<space>b', ':FzfLua buffers<CR>', silentnoremap)
 
+-- random remaps
 map('i', 'jk', '<Esc>', silentnoremap)
 map('n', '<leader>t', ':NvimTreeToggle<cr>', silentnoremap)
-map('n', '<leader>c', ':ccl<cr> :lcl<cr>', silentnoremap)
+-- map('n', '<leader>c', ':ccl<cr> :lcl<cr>', silentnoremap)
+map('n', '<leader>c', ':lua toggle_location_list()<cr>', silentnoremap)
+map('n', '<leader>n', ':lnext<cr>', silentnoremap)
+map('n', '<leader>N', ':lprev<cr>', silentnoremap)
 
 local function vsnip_jump()
   if vim.fn['vsnip#available(1)'] then

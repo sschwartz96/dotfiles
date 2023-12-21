@@ -139,7 +139,22 @@ lspconfig.yamlls.setup({
 })
 
 -- c# (csharp) / .net (dotnet)
-lspconfig.csharp_ls.setup{
+lspconfig.csharp_ls.setup({
   on_attach = on_attach,
   capabilities = capabilities,
-}
+})
+
+-- python - jeid
+-- lspconfig.jedi_language_server.setup {
+-- on_attach = on_attach,
+-- capabilities = capabilities,
+-- }
+lspconfig.pyright.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
+lspconfig.html.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
