@@ -17,20 +17,24 @@ else
 	echo "$HOST"
 	# set up multi-monitor
 	# (have to change this in order to use with polybar)
-	#bspc monitor %DP-2.8 -n bottom
-	bspc monitor DisplayPort-0 -n bottom
-	#bspc monitor DP-5 -n top
+	
 
-	bspc monitor bottom -d 1 2 3 4
-	bspc monitor DisplayPort-2 -d 7 8 9 0
+	# bspc monitor HDMI-A-0 -d 1 2 3 4 7 8 9 0
+	# bspc config -m HDMI-A-0 top_padding 30
+	# TOP_MONITOR=HDMI-A-0 polybar top &
 
-	# start polybars
-	polybar bottom & 
-	polybar top & 
-
-	# padding for polybar
-	bspc config -m bottom top_padding 30
-	bspc config -m DisplayPort-2 top_padding 30
+	 bspc monitor DisplayPort-1 -n bottom
+	
+	 bspc monitor bottom -d 1 2 3 4
+	 bspc monitor DisplayPort-2 -d 7 8 9 0
+	
+	 # start polybars
+	 polybar bottom & 
+	 polybar top & 
+	
+	 # padding for polybar
+	 bspc config -m bottom top_padding 30
+	 bspc config -m DisplayPort-2 top_padding 30
 fi
 
 # floating window rules
