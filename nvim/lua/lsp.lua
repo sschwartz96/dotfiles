@@ -158,3 +158,9 @@ lspconfig.html.setup({
   on_attach = on_attach,
   capabilities = capabilities,
 })
+
+-- ccls
+lspconfig.ccls.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})

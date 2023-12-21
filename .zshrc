@@ -156,15 +156,19 @@ export MOZ_USE_XINPUT2=1
 # used by rofi-connman to center the window
 export ROFI_COMMAND="rofi -dmenu -no-fixed-num-lines -no-custom -i -p"
 
+# use difft as the default git diff viewer
+export GIT_EXTERNAL_DIFF="difft"
+
 ########## END variables ########## 
 
 # fzf
 #export FZF_DEFAULT_COMMAND="find -L" # finds hidden files too
-export FZF_DEFAULT_COMMAND="rg --files --hidden --iglob '!node_modules' --iglob '!.git'"
+export FZF_DEFAULT_COMMAND="rg --files --hidden --iglob '!{node_modules,.git,.ccls-cache}'"
 
 # docker completion
 fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
+
 
 # cd into home
 #cd ~

@@ -154,7 +154,7 @@ cursor-scroll = ns-resize
 
 [bar/bottom]
 # monitor = ${env:BOTTOM_MONITOR:DP-2.8}
-monitor = ${env:BOTTOM_MONITOR:DisplayPort-0}
+monitor = ${env:BOTTOM_MONITOR:DisplayPort-1}
 width = 100%
 height = 27
 radius = 6.0

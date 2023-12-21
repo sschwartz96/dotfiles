@@ -208,5 +208,11 @@ require("lsp_signature").setup()
 -- dotenv
 require('dotenv').setup({
   enable_on_load = true, -- will load your .env file upon loading a buffer
-  verbose = false, -- show error notification if .env file is not found and if .env is loaded
+  verbose = false,       -- show error notification if .env file is not found and if .env is loaded
+})
+
+require('fzf-lua').setup({
+  files = {
+    cmd = vim.env.FZF_DEFAULT_COMMAND
+  }
 })
