@@ -57,7 +57,7 @@ cmp.setup({
     }),
   },
   sources = {
-    { name = 'nvim_lsp', keyword_length = 3, max_item_count = 33 },
+    { name = 'nvim_lsp', keyword_length = 1, max_item_count = 100 },
 
     -- For vsnip user.
     { name = 'vsnip' },

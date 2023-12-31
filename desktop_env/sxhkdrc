@@ -134,6 +134,11 @@ XF86AudioRaiseVolume
 XF86AudioLowerVolume
 	pamixer -d 5
 
+XF86AudioMute
+	pamixer --toggle-mute
+
+XF86AudioMicMute
+	pamixer --default-source --toggle-mute
 
 # playerctl
 XF86AudioPlay
@@ -184,7 +189,7 @@ super + c
 
 # start rofi-connman
 super + n
-	rofi-connman
+	rofi -show "WIFI" -modi "WIFI:iwdrofimenu"
 
 # start rofi-connman
 super + b

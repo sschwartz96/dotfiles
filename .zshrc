@@ -9,6 +9,9 @@
 autoload -U colors && colors
 
 # auto complete
+
+# add custom directory
+fpath=(~/dotfiles/zsh_completition/ $fpath)
 setopt auto_cd
 autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*' # corrects capitalization
@@ -82,6 +85,8 @@ alias lt='lsd --tree --group-dirs first'
 alias file-explorer='thunar'
 alias lg='lazygit'
 alias lzd='lazydocker'
+alias gdifft='GIT_EXTERNAL_DIFF=difft git diff'
+alias gd=godo
 ########## END aliases ########## 
 
 
@@ -104,15 +109,18 @@ export PATH=$PATH:/home/sam/github.com/protobuf.dart/protoc_plugin/bin
 export PATH=$PATH:/home/sam/.local/share/pnpm/
 # for dart pub executable tools
 export PATH="$PATH":"$HOME/.pub-cache/bin"
+# for c# / .net
+export PATH="$PATH:/home/sam/.dotnet/tools"
+# for go
+export PATH=$PATH:/usr/local/go/bin
 
 
 # VARIABLES 
 export MYVIMRC="~/.config/nvim/init.vim"
 export MYCOCRC="~/.config/nvim/coc-settings.json"
 export MOPS=~/projects/m-ops.org
-export GOREP=~/go/src/github.com/sschwartz96
+# export GOREP=~/go/src/github.com/sschwartz96
 export GO111MODULE=on
-#export GOPATH=~/go
 export SYNCAPOD_OLD=~/go/src/github.com/sschwartz96/syncapod
 export SYNCAPOD=~/projects/syncapod
 export BROWSER="/usr/bin/firefox"
@@ -175,7 +183,6 @@ fi
 [ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
 
 autoload -U +X bashcompinit && bashcompinit
-#complete -o nospace -C /home/sam/go/bin/bitcomplete bit
 
 # pnpm
 export PNPM_HOME="/home/sam/.local/share/pnpm"
@@ -185,9 +192,6 @@ export PATH="$PNPM_HOME:$PATH"
 # rust config
 source "$HOME/.cargo/env"
 
-# gvm
-if [ -e /home/sam/.gvm/scripts/gvm ]
-then
-	source /home/sam/.gvm/scripts/gvm
-	gvm use go1.20 >/dev/null 2>&1
-fi
+# tabtab source for packages
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
