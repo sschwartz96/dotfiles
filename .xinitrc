@@ -43,7 +43,7 @@ if [ "$HOSTNAME" = "sam-artix" ]; then
 	xinput --set-prop "pointer:Logitech G Pro Gaming Mouse" "Coordinate Transformation Matrix" 2.100000, 0.000000, 0.000000, 0.000000, 2.100000, 0.000000, 0.000000, 0.000000, 1.000000
 	xinput --set-prop "pointer:Logitech G Pro Gaming Mouse" "libinput Scroll Method Enabled" 0, 0, 1
 
-	xrandr --output DisplayPort-0 --mode 3440x1440 --rate 143.97
+	xrandr --output DisplayPort-1 --mode 3440x1440 --rate 143.97 --set TearFree on
 fi
 
 # set brightness
