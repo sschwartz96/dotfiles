@@ -164,3 +164,9 @@ lspconfig.ccls.setup({
   on_attach = on_attach,
   capabilities = capabilities,
 })
+
+-- json
+lspconfig.jsonls.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
