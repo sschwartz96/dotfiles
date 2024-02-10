@@ -1,4 +1,4 @@
-c reload sxhkd config
+# reload sxhkd config
 ctrl + shift + r
 	pkill sxhkd; sleep 1; sxhkd & disown
 	#killall -SIGUSR1 sxhkd; sleep 1
@@ -242,7 +242,8 @@ ctrl + shift + period
 
 # rotate right display
 super + ctrl + shift + 0
-	xrandr --output DisplayPort-2 --rotate right --pos 3440x-140 --output DisplayPort-1 --pos 0x0
+	xrandr --output DisplayPort-0 --off --output DisplayPort-1 --primary --mode 3440x1440 --pos 0x151 --rotate normal --output DisplayPort-2 --mode 2560x1440 --pos 3440x0 --rotate right --output HDMI-A-0 --off --output HDMI-A-1-1 --off --output DisplayPort-1-3 --off --output DisplayPort-1-4 --off --output DisplayPort-1-5 --off
+	#xrandr --output DisplayPort-2 --rotate right --pos 3440x-140 --output DisplayPort-1 --pos 0x0
 	#nvidia-settings --assign CurrentMetaMode="DisplayPort-2: 1920x1080 +2560+0 { Rotation=right }, DP-2.8: 2560x1080 +0+340"
 
 # normal

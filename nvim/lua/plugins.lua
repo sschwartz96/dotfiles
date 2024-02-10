@@ -55,6 +55,9 @@ require("lazy").setup({
   -- comment
   'numToStr/Comment.nvim',
 
+  -- bullets (lists)
+  'dkarter/bullets.vim',
+
   -- auto pairs
   {
     'windwp/nvim-autopairs',
@@ -145,6 +148,13 @@ require("lazy").setup({
   -- dart
   'dart-lang/dart-vim-plugin',
 
+  -- markdown
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function() vim.fn["mkdp#util#install"]() end,
+  },
 
 })
 

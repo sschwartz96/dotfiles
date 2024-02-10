@@ -45,4 +45,5 @@ bspc rule -a "Vmware-view" state=floating
 bspc rule -a "Shutter" state=floating
 bspc rule -a "invoiceninja" state=tiled
 bspc rule -a "Invoiceninja" state=tiled
+bspc rule -a "Invoice_Ninja" state=tiled
 bspc rule -a "Thunar" state=floating

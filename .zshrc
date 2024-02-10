@@ -113,7 +113,8 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 export PATH="$PATH:/home/sam/.dotnet/tools"
 # for go
 export PATH=$PATH:/usr/local/go/bin
-
+# for my personal scripts
+export PATH=$PATH:~/scripts/
 
 # VARIABLES 
 export MYVIMRC="~/.config/nvim/init.vim"
