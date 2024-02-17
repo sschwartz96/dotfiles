@@ -94,7 +94,7 @@ alias gd=godo
 export PS1='%n:%1d$ '
 
 # path additions
-export PATH=$PATH:~/bin/
+export PATH=$PATH:~/bin
 export PATH=$PATH:~/go/bin			# used for vim-go
 export PATH=$PATH:~/bin/dart-sass
 export PATH=$PATH:~/bin/robo3t/bin

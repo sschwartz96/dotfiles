@@ -1,0 +1,22 @@
+{
+  "keyMappings": "# Insert your preferred key mappings here.\nmap <c-e> passNextKey\nmap K previousTab\nmap J nextTab",
+  "settingsVersion": "2.0.6",
+  "exclusionRules": [
+    {
+      "passKeys": "",
+      "pattern": "https?://mail.google.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https://github.com/users/sschwartz96/projects/2"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://www.sedecordle.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://localhost:5174/*"
+    }
+  ]
+}
