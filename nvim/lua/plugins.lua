@@ -20,10 +20,10 @@ require("lazy").setup({
   "nvim-lua/plenary.nvim",
 
   -- treesitter
-  'nvim-treesitter/nvim-treesitter',
+  { 'nvim-treesitter/nvim-treesitter', build = ":TSUpdate" },
 
   -- neodev
-  { "folke/neodev.nvim",        opts = {} },
+  { "folke/neodev.nvim",               opts = {} },
 
   -- lsp
   "neovim/nvim-lspconfig",
@@ -108,7 +108,7 @@ require("lazy").setup({
   'nvim-lualine/lualine.nvim',
 
   -- smooth scrolling
-  { 'karb94/neoscroll.nvim', event = "VeryLazy" },
+  { 'karb94/neoscroll.nvim',    event = "VeryLazy" },
 
   -- function signature hint
   'ray-x/lsp_signature.nvim',
@@ -154,6 +154,7 @@ require("lazy").setup({
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     ft = { "markdown" },
     build = function() vim.fn["mkdp#util#install"]() end,
+  },
 
   -- flutter
   {
@@ -181,6 +182,9 @@ require('gruvbox').setup()
 
 -- nvim-treesitter
 require('nvim-treesitter').setup()
+require('nvim-treesitter.configs').setup({
+  ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "go", "dart", "svelte", "javascript", "typescript" },
+})
 
 -- dap - debugging setup
 require('dap-go').setup()
