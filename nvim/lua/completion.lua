@@ -1,6 +1,3 @@
--- Set completeopt to have a better completion experience
-vim.o.completeopt = "menuone,noinsert,noselect"
-
 -- Setup nvim-cmp
 local cmp = require('cmp')
 
@@ -63,7 +60,12 @@ cmp.setup({
 
     { name = 'buffer',   keyword_length = 2, },
     { name = 'path',     keyword_length = 1, },
-  }
+  },
+  completion = {
+    completeopt = 'menu,menuone,noinsert'
+  },
+  -- use to remove item preselection from gopls language server
+  preselect = cmp.PreselectMode.None,
 })
 
 -- Use buffer source for `/`.
