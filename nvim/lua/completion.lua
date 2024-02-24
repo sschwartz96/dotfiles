@@ -56,7 +56,7 @@ cmp.setup({
   sources = {
     -- For vsnip user.
     { name = 'vsnip' },
-    { name = 'nvim_lsp', keyword_length = 1, max_item_count = 100 },
+    { name = 'nvim_lsp', keyword_length = 1, max_item_count = 50 },
 
     { name = 'buffer',   keyword_length = 2, },
     { name = 'path',     keyword_length = 1, },
@@ -66,6 +66,19 @@ cmp.setup({
   },
   -- use to remove item preselection from gopls language server
   preselect = cmp.PreselectMode.None,
+  sorting = {
+    comparators = {
+      cmp.config.compare.sort_text, -- moving this first actually helped sort completions for gopls
+      cmp.config.compare.offset,
+      cmp.config.compare.exact,
+      cmp.config.compare.score,
+      cmp.config.compare.recently_used,
+      cmp.config.compare.locality,
+      cmp.config.compare.kind,
+      cmp.config.compare.length,
+      cmp.config.compare.order,
+    },
+  },
 })
 
 -- Use buffer source for `/`.

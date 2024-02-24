@@ -79,6 +79,21 @@ lspconfig.gopls.setup({
   on_attach = on_attach,
   capabilities = capabilities,
   filetypes = { "go", "gomod", "gowork", "gotmpl", "gohtmltmpl" },
+  settings = {
+    gopls = {
+      -- analyses = {
+      --   nilness = true,
+      --   unusedparams = true,
+      --   unusedwrite = true,
+      --   useany = true,
+      -- },
+      -- experimentalPostfixCompletions = true,
+      -- gofumpt = true,
+      -- staticcheck = true,
+      usePlaceholders = true,
+      templateExtensions = { "gohtmltmpl", "gohtml" },
+    },
+  },
 })
 
 -- eslint
@@ -179,4 +194,11 @@ lspconfig.ccls.setup({
 lspconfig.jsonls.setup({
   on_attach = on_attach,
   capabilities = capabilities,
+})
+
+-- htmx
+lspconfig.htmx.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { "html", "gotmpl", "gohtmltmpl" },
 })
