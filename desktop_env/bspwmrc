@@ -29,16 +29,11 @@ else
 	 (sleep 5 && ~/dotfiles/scripts/hideIt.sh --name '^polybar-bottom' --direction top --signal --steps 0.5 > /dev/null 2>&1 & disown) & disown
 	 (sleep 5 && ~/dotfiles/scripts/hideIt.sh --name '^polybar-top' --direction top --signal --steps 0.5 > /dev/null 2>&1 & disown) & disown
 	
-	 # padding for polybar
-	 bspc config -m bottom top_padding 7
-	 bspc config -m bottom bottom_padding 7
-	 bspc config -m bottom right_padding 7
-	 bspc config -m bottom left_padding 7
-
-	 bspc config -m DisplayPort-2 top_padding 7
-	 bspc config -m DisplayPort-2 bottom_padding 7
-	 bspc config -m DisplayPort-2 right_padding 7
-	 bspc config -m DisplayPort-2 left_padding 7
+	 # padding 
+	 bspc config top_padding 5
+	 bspc config bottom_padding 5
+	 bspc config right_padding 5
+	 bspc config left_padding 5
 fi
 
 # ensure polybar appears above other windows
