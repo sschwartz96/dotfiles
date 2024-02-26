@@ -61,7 +61,7 @@ foreground = ${colors.foreground}
 
 line-size = 1
 
-border-size = 4
+border-size = 10
 border-color = #00000000
 
 padding-left = 0
@@ -103,7 +103,7 @@ foreground = ${colors.foreground}
 
 line-size = 1
 
-border-size = 4
+border-size = 10
 border-color = #00000000
 
 padding-left = 0
@@ -145,7 +145,7 @@ foreground = ${colors.foreground}
 
 line-size = 1
 
-border-size = 4
+border-size = 10
 border-color = #00000000
 
 padding-left = 0
@@ -187,7 +187,7 @@ foreground = ${colors.foreground}
 
 line-size = 1
 
-border-size = 4
+border-size = 10
 border-color = #00000000
 
 padding-left = 0
@@ -624,6 +624,7 @@ screenchange-reload = true
 ;compositing-foreground = source
 ;compositing-border = over
 ;pseudo-transparency = false
+pseudo-transparency = true
 
 [global/wm]
 margin-top = 5
