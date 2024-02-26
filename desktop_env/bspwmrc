@@ -3,15 +3,10 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 # if on the laptop
-if [ "$HOST" = "sam-void" ] || [ "$HOST" = "sam-lap" ]
-then
-	bspc monitor eDP1 -d 1 2 3 4 7 8 9 0
-	polybar laptop &
-	bspc config top_padding 30
-elif [ "$HOST" = "lenovo-artix" ]
+if [ "$HOST" = "lenovo-artix" ]
 then
 	bspc monitor eDP -d 1 2 3 4 7 8 9 0
-	polybar lenovo &
+	polybar lenovo > /dev/null 2>&1 & disown
 	bspc config top_padding 30
 else
 	echo "$HOST"
@@ -29,13 +24,25 @@ else
 	 bspc monitor DisplayPort-2 -d 7 8 9 0
 	
 	 # start polybars
-	 polybar bottom & 
-	 polybar top & 
+	 polybar bottom > /dev/null 2>&1 & disown
+	 polybar top > /dev/null 2>&1 & disown
+	 (sleep 5 && ~/dotfiles/scripts/hideIt.sh --name '^polybar-bottom' --direction top --signal --steps 0.5 > /dev/null 2>&1 & disown) & disown
+	 (sleep 5 && ~/dotfiles/scripts/hideIt.sh --name '^polybar-top' --direction top --signal --steps 0.5 > /dev/null 2>&1 & disown) & disown
 	
 	 # padding for polybar
-	 bspc config -m bottom top_padding 30
-	 bspc config -m DisplayPort-2 top_padding 30
+	 bspc config -m bottom top_padding 7
+	 bspc config -m bottom bottom_padding 7
+	 bspc config -m bottom right_padding 7
+	 bspc config -m bottom left_padding 7
+
+	 bspc config -m DisplayPort-2 top_padding 7
+	 bspc config -m DisplayPort-2 bottom_padding 7
+	 bspc config -m DisplayPort-2 right_padding 7
+	 bspc config -m DisplayPort-2 left_padding 7
 fi
+
+# ensure polybar appears above other windows
+(sleep 10 && xdo raise -N Polybar) & disown
 
 # floating window rules
 bspc rule -a zoom state=floating

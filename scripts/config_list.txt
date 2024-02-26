@@ -7,7 +7,7 @@ nvim			/home/sam/.config/nvim/init.lua
 sxhkd			/home/sam/.config/sxhkd/sxhkdrc
 bspwm			/home/sam/.config/bspwm/bspwmrc
 picom			/home/sam/.config/picom/picom.conf
-alacritty		/home/sam/.config/alacritty/alacritty.yml
+alacritty		/home/sam/.config/alacritty/alacritty.toml
 polybar			/home/sam/.config/polybar/config
 rofi			/home/sam/.config/rofi/config.rasi
 dunst			/home/sam/.config/dunst/dunstrc

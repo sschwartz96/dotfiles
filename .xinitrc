@@ -64,8 +64,9 @@ fi
 xset r rate 200 60
 
 # start various programs in the background
-feh --bg-center pictures/background.jpg &
+# feh --bg-center pictures/background.jpg &
 feh-blur --blur 4 --darken 0 -d
+feh --bg-fill pictures/outer_space.png &
 
 # pipewire for audio
 pipewire &

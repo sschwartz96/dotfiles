@@ -24,12 +24,12 @@ require('completion')
 vim.o.termguicolors = true
 
 -- sign_partial_hl = "WarningMsg",
-require("gruvbox").setup({
-  overrides = {
-    WarningMsg = { link = "GruvboxOrangeBold" },
-  }
-})
-vim.cmd('colorscheme gruvbox')
+-- require("gruvbox").setup({
+--   overrides = {
+--     WarningMsg = { link = "GruvboxOrangeBold" },
+--   }
+-- })
+vim.cmd('colorscheme kanagawa')
 vim.o.background = "dark"                  -- or "light" for light mode
 vim.g.vim_svelte_plugin_use_typescript = 1 -- enables typescript syntax in .svelte files
 

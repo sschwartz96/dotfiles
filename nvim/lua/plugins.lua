@@ -101,6 +101,9 @@ require("lazy").setup({
     opts = {},
   },
 
+  -- kanagawa.nvim
+  "rebelot/kanagawa.nvim",
+
   -- icons for fzf and nvim-tree
   'kyazdani42/nvim-web-devicons',
 

@@ -6,4 +6,4 @@ configuration {
 	sort: true;
 }
 
-@theme "gruvbox-dark"
+@theme "~/dotfiles/desktop_env/themes/rofi/kanagawa.rasi"

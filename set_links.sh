@@ -25,6 +25,7 @@ ln -s $PWD/desktop_env/bspwmrc ~/.config/bspwm/bspwmrc
 ln -s $PWD/desktop_env/picom.conf ~/.config/picom/picom.conf
 ln -s $PWD/desktop_env/config ~/.config/polybar/config
 ln -s $PWD/desktop_env/alacritty.toml ~/.config/alacritty/alacritty.toml
+ln -s $PWD/desktop_env/alacritty_themes/kanagawa_wave.toml ~/.config/alacritty/kanagawa_wave.toml
 ln -s $PWD/desktop_env/config.rasi ~/.config/rofi/config.rasi
 ln -s $PWD/desktop_env/dunstrc ~/.config/dunst/dunstrc
 
