@@ -86,6 +86,9 @@ require("lazy").setup({
   -- git blame
   'f-person/git-blame.nvim',
 
+  -- todo-comments
+  'folke/todo-comments.nvim',
+
   ------------------------------- Visuals ---------------------------------
 
   ---- color schemes ----
@@ -261,3 +264,5 @@ require('flutter-tools').setup({
     end,
   },
 })
+
+require('todo-comments').setup()
