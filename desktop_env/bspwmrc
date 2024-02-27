@@ -28,6 +28,7 @@ else
 	 polybar top > /dev/null 2>&1 & disown
 	 (sleep 5 && ~/dotfiles/scripts/hideIt.sh --name '^polybar-bottom' --direction top --signal --steps 0.5 > /dev/null 2>&1 & disown) & disown
 	 (sleep 5 && ~/dotfiles/scripts/hideIt.sh --name '^polybar-top' --direction top --signal --steps 0.5 > /dev/null 2>&1 & disown) & disown
+	 (sleep 5 && ~/dotfiles/scripts/hideIt.sh --name 'Polybar tray window' --direction top --signal --steps 0.5 > /dev/null 2>&1 & disown) & disown
 	
 	 # padding 
 	 bspc config top_padding 5
@@ -38,6 +39,7 @@ fi
 
 # ensure polybar appears above other windows
 (sleep 10 && xdo raise -N Polybar) & disown
+(sleep 10 && xdo raise -a 'Polybar tray window') & disown
 
 # floating window rules
 bspc rule -a zoom state=floating
