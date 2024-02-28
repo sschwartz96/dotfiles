@@ -1,4 +1,4 @@
-config-list		/home/sam/dotfiles/scripts/config_list.txt
+config-list		/home/sam/dotfiles/scropts/config_list.txt
 edit_config.sh 	/home/sam/dotfiles/scripts/edit_config.sh
 xinit			/home/sam/.xinitrc
 zsh				/home/sam/.zshrc
@@ -9,7 +9,7 @@ bspwm			/home/sam/.config/bspwm/bspwmrc
 picom			/home/sam/.config/picom/picom.conf
 alacritty		/home/sam/.config/alacritty/alacritty.toml
 polybar			/home/sam/.config/polybar/config
-rofi			/home/sam/.config/rofi/config.rasi
+rofi			/home/sam/dotfiles/desktop_env/config.rasi
 dunst			/home/sam/.config/dunst/dunstrc
 xscreensaver	/home/sam/.xscreensaver
 ledger			/home/sam/gdrive/Documents&Bookkeeping/2021/schwartzit_2021.ledger
