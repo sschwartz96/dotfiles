@@ -2,12 +2,14 @@
 # start sxhkd
 pgrep -x sxhkd > /dev/null || sxhkd &
 
+if [ "$HOST" = "lenovo-artix" ]
+then
 # if on the laptop
 if [ "$HOST" = "lenovo-artix" ]
 then
 	bspc monitor eDP -d 1 2 3 4 7 8 9 0
 	polybar lenovo > /dev/null 2>&1 & disown
-	bspc config top_padding 30
+	(sleep 5 && ~/dotfiles/scripts/hideIt.sh --name '^polybar-lenovo_eDP' --direction top --signal --steps 0.5 > /dev/null 2>&1 & disown) & disown
 else
 	echo "$HOST"
 	# set up multi-monitor
@@ -30,12 +32,13 @@ else
 	 (sleep 5 && ~/dotfiles/scripts/hideIt.sh --name '^polybar-top' --direction top --signal --steps 0.5 > /dev/null 2>&1 & disown) & disown
 	 (sleep 5 && ~/dotfiles/scripts/hideIt.sh --name 'Polybar tray window' --direction top --signal --steps 0.5 > /dev/null 2>&1 & disown) & disown
 	
-	 # padding 
-	 bspc config top_padding 5
-	 bspc config bottom_padding 5
-	 bspc config right_padding 5
-	 bspc config left_padding 5
 fi
+
+ # padding 
+bspc config top_padding 5
+bspc config bottom_padding 5
+bspc config right_padding 5
+bspc config left_padding 5
 
 # ensure polybar appears above other windows
 (sleep 10 && xdo raise -N Polybar) & disown

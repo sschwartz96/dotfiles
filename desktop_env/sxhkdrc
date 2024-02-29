@@ -85,12 +85,7 @@ super + t
 	bspc node -t \~tiled
 
 super + g
-	xdo raise -N Polybar \
-	xdo raise -a 'Polybar tray window' \
-	& ~/dotfiles/scripts/hideIt.sh --name '^polybar-bottom' --toggle \ 
-		& ~/dotfiles/scripts/hideIt.sh --name '^polybar-top' --toggle \
-		& ~/dotfiles/scripts/hideIt.sh --name 'Polybar tray window' --toggle
-		
+	~/dotfiles/scripts/toggle_poly.zsh
 
 super + {_,shift + }g
 	bspc node 'focused.floating#{next,prev}.local.!hidden.floating' -f \
