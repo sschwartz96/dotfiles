@@ -137,3 +137,13 @@ button selected normal {
 scrollbar {
     enabled: true;
 } 
+
+textbox {
+	padding: 8px;
+    lines: 12;
+    columns: 1;
+    border: 2px;
+    border-color: @primary;
+    dynamic: false;
+	text-color: @primary;
+}
