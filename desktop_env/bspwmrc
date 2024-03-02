@@ -2,8 +2,6 @@
 # start sxhkd
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-if [ "$HOST" = "lenovo-artix" ]
-then
 # if on the laptop
 if [ "$HOST" = "lenovo-artix" ]
 then
