@@ -123,6 +123,17 @@ lspconfig.tsserver.setup({
   init_options = {
     hostInfo = "neovim"
   },
+  settings = {
+    -- TypeScript specific settings
+    -- You can configure formatting options here
+    format = {
+      enable = true,               -- Enable formatting support
+      tabSize = 2,                 -- Set tab size to 2 spaces
+      useTabs = false,             -- Use spaces instead of tabs
+      singleQuote = true,          -- Use single quotes for strings
+      trailingComma = "all",       -- Add trailing commas
+    }
+  }
   -- root_dir = root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
 })
 

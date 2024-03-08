@@ -89,6 +89,9 @@ require("lazy").setup({
   -- todo-comments
   'folke/todo-comments.nvim',
 
+  -- formatting
+  'mhartington/formatter.nvim',
+
   ------------------------------- Visuals ---------------------------------
 
   ---- color schemes ----
@@ -266,3 +269,36 @@ require('flutter-tools').setup({
 })
 
 require('todo-comments').setup()
+
+-- Utilities for creating configurations
+local util = require "formatter.util"
+
+-- Provides the Format, FormatWrite, FormatLock, and FormatWriteLock commands
+require("formatter").setup {
+  -- Enable or disable logging
+  logging = true,
+  -- Set the log level
+  log_level = vim.log.levels.WARN,
+  -- All formatter configurations are opt-in
+  filetype = {
+    -- Use the special "*" filetype for defining formatter configurations on
+    -- any filetype
+    javascript = {
+      require("formatter.filetypes.javascript").prettier
+    },
+    javascriptreact = {
+      require("formatter.filetypes.javascript").prettier
+    },
+    typescript = {
+      require("formatter.filetypes.typescript").prettier
+    },
+    typescriptreact = {
+      require("formatter.filetypes.typescript").prettier
+    },
+    ["*"] = {
+      -- "formatter.filetypes.any" defines default configurations for any
+      -- filetype
+      require("formatter.filetypes.any").remove_trailing_whitespace
+    }
+  }
+}

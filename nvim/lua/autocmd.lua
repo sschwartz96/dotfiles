@@ -26,6 +26,17 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     if (string.match(string.sub(filename, -3, -1), '.go')) then
       goimports.goimports(1000)
     end
-    vim.lsp.buf.format()
+
+    local filetype = vim.bo.filetype;
+    if (not string.match(filetype, "javascript")
+          and not string.match(filetype, "typescript")
+          and not string.match(filetype, "javascriptreact")
+          and not string.match(filetype, "typescriptreact")) then
+      vim.lsp.buf.format()
+    end
   end,
+})
+
+vim.api.nvim_create_autocmd("BufWritePost", {
+  command = "FormatWriteLock",
 })
