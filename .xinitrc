@@ -2,16 +2,7 @@
 
 sleep 1
 
-# set trackpad settings
-synclient VertScrollDelta=-66	# natural scrolling
-synclient TapAndDragGesture=1
-synclient TapButton1=1
-synclient TapButton2=3
-synclient PalmDetect=1
-synclient PalmMinWidth=4
-synclient PalmMinZ=50
-synclient MinSpeed=1.5
-synclient HorizTwoFingerScroll=1
+BG_LOCATION="/home/sam/pictures/kanagawa.jpg"
 
 # lenovo-artix only configuration
 if [ "$HOSTNAME" = "lenovo-artix" ]; then
@@ -25,15 +16,9 @@ if [ "$HOSTNAME" = "lenovo-artix" ]; then
 	setxkbmap -option caps:swapescape # swap esc and caps lock
 
 	libinput-gestures &
-fi
 
-# don't swap on desktop due to new keyboard
-if [ "$HOSTNAME" = "sam-lap" ]
-then
-	setxkbmap -option caps:swapescape # swap esc and caps lock
-
-	# libinput-gestures for touchpad swipes
-	libinput-gestures &
+	# set brightness
+	xbacklight -set 25
 fi
 
 # desktop only configuration
@@ -44,13 +29,9 @@ if [ "$HOSTNAME" = "sam-artix" ]; then
 	xinput --set-prop "pointer:Logitech G Pro Gaming Mouse" "libinput Scroll Method Enabled" 0, 0, 1
 
 	xrandr --output DisplayPort-1 --mode 3440x1440 --rate 143.97 --set TearFree on
+
+	BG_LOCATION="/home/sam/pictures/outer_space.png"
 fi
-
-# set brightness
-xbacklight -set 25
-
-# turn off trackpad when typing
-syndaemon -i 0.2 -K -t -d
 
 # start dbus for playerctl & spotify, must be started early to allow programs opened by sxhkd to be listed in dbus
 # test for an existing bus daemon, just to be safe
@@ -64,9 +45,8 @@ fi
 xset r rate 200 60
 
 # start various programs in the background
-# feh --bg-center pictures/background.jpg &
 feh-blur --blur 4 --darken 0 -d
-feh --bg-fill pictures/outer_space.png &
+feh --bg-fill $BG_LOCATION &
 
 # pipewire for audio
 pipewire &
@@ -76,8 +56,6 @@ wireplumber &
 picom --fading --fade-delta=5 &
 redshift -l 36.15:-97.38 &
 ntfd & # weather for polybar
-#~/scripts/set_status.sh &
-numlockx on
 
 # fixed for large cursor
 xrdb -merge ~/.Xresources

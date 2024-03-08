@@ -66,6 +66,9 @@ map('n', '<leader>c', ':lua toggle_location_list()<cr>', silentnoremap)
 map('n', '<leader>n', ':lnext<cr>', silentnoremap)
 map('n', '<leader>N', ':lprev<cr>', silentnoremap)
 
+-- new lsp remap location
+map('v', '<space>ca', ':lua vim.lsp.buf.code_action()<CR>', silentnoremap)
+
 local function vsnip_jump()
   if vim.fn['vsnip#available(1)'] then
     return '<Plug>(vsnip-expand-or-jump)'
