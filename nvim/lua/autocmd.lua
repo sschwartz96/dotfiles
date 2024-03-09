@@ -1,7 +1,7 @@
 local goimports = require('goimports')
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "lua", "dart", "proto" },
+  pattern = { "lua", "dart", "proto", "typescript", "typescriptreact", "javascript", "javascriptreact", "json" },
   callback = function()
     --local data = {
     --  buf = vim.fn.expand("<abuf>"),
@@ -27,16 +27,10 @@ vim.api.nvim_create_autocmd("BufWritePre", {
       goimports.goimports(1000)
     end
 
-    local filetype = vim.bo.filetype;
-    if (not string.match(filetype, "javascript")
-          and not string.match(filetype, "typescript")
-          and not string.match(filetype, "javascriptreact")
-          and not string.match(filetype, "typescriptreact")) then
-      vim.lsp.buf.format()
-    end
+    -- local filetype = vim.bo.filetype;
+    -- if (not string.match(filetype, "javascript")
+    --   -- Do something
+    -- end
+    vim.lsp.buf.format()
   end,
-})
-
-vim.api.nvim_create_autocmd("BufWritePost", {
-  command = "FormatWriteLock",
 })

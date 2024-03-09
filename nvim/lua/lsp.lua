@@ -5,6 +5,10 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
+  -- do not allow tsserver to format
+  if client.name == "tsserver" then
+    client.server_capabilities.documentFormattingProvider = false
+  end
   -- Enable completion triggered by <c-x><c-o>
   -- vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
@@ -44,6 +48,11 @@ table.insert(runtime_path, "lua/?/init.lua")
 lspconfig.lua_ls.setup({
   on_attach = on_attach,
   capabilities = capabilities,
+  settings = {
+    Lua = {
+      diagnostics = { globals = { 'vim' } }
+    }
+  },
   on_init = function(client)
     local path = client.workspace_folders[1].name
     if not vim.loop.fs_stat(path .. '/.luarc.json') and not vim.loop.fs_stat(path .. '/.luarc.jsonc') then
@@ -127,11 +136,11 @@ lspconfig.tsserver.setup({
     -- TypeScript specific settings
     -- You can configure formatting options here
     format = {
-      enable = true,               -- Enable formatting support
-      tabSize = 2,                 -- Set tab size to 2 spaces
-      useTabs = false,             -- Use spaces instead of tabs
-      singleQuote = true,          -- Use single quotes for strings
-      trailingComma = "all",       -- Add trailing commas
+      enable = true,         -- Enable formatting support
+      tabSize = 2,           -- Set tab size to 2 spaces
+      useTabs = false,       -- Use spaces instead of tabs
+      singleQuote = true,    -- Use single quotes for strings
+      trailingComma = "all", -- Add trailing commas
     }
   }
   -- root_dir = root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
