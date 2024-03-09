@@ -96,6 +96,19 @@ require("lazy").setup({
     config = require("config.none-ls").setup,
   },
 
+  -- codium ai assistant
+  {
+    "Exafunction/codeium.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "hrsh7th/nvim-cmp",
+    },
+    config = function()
+      require("codeium").setup({
+      })
+    end
+  },
+
   ------------------------------- Visuals ---------------------------------
 
   ---- color schemes ----
@@ -180,6 +193,13 @@ require("lazy").setup({
     config = true,
   },
 
+  -- html tag auto close
+  {
+    'windwp/nvim-ts-autotag',
+    event = "VeryLazy",
+    config = require("config.nvim-ts-autotag").setup,
+  }
+
 })
 
 ----------------------------- Setup plugins -----------------------------
@@ -197,6 +217,11 @@ require('gruvbox').setup()
 require('nvim-treesitter').setup()
 require('nvim-treesitter.configs').setup({
   ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "go", "dart", "svelte", "javascript", "typescript" },
+  auto_install = true,
+  highlight = {
+    enable = true,
+    disable = {}, -- can be a list of lang, or a function(lang, buf)
+  }
 })
 
 -- dap - debugging setup

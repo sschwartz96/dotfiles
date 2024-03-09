@@ -201,7 +201,7 @@ lspconfig.pyright.setup({
 lspconfig.html.setup({
   on_attach = on_attach,
   capabilities = capabilities,
-  filetypes = { "html", "gohtmltmpl" },
+  filetypes = { "html", "gohtmltmpl", "typescriptreact" },
 })
 
 -- ccls
