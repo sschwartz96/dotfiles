@@ -99,14 +99,14 @@ require("lazy").setup({
   -- codium ai assistant
   {
     "Exafunction/codeium.nvim",
+    ft = { "go, lua, typescript, typescriptreact" },
     dependencies = {
       "nvim-lua/plenary.nvim",
       "hrsh7th/nvim-cmp",
     },
     config = function()
-      require("codeium").setup({
-      })
-    end
+      require("codeium").setup({})
+    end,
   },
 
   ------------------------------- Visuals ---------------------------------

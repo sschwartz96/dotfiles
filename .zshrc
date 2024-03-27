@@ -196,3 +196,5 @@ source "$HOME/.cargo/env"
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
+
+source /home/sam/.config/broot/launcher/bash/br
