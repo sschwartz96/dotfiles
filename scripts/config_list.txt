@@ -1,4 +1,4 @@
-config-list		/home/sam/dotfiles/scropts/config_list.txt
+config-list		/home/sam/dotfiles/scripts/config_list.txt
 edit_config.sh 	/home/sam/dotfiles/scripts/edit_config.sh
 xinit			/home/sam/.xinitrc
 zsh				/home/sam/.zshrc

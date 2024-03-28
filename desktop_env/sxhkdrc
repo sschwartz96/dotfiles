@@ -178,6 +178,9 @@ ctrl + shift + {0-9}
 super + e
 	~/dotfiles/scripts/edit_config.sh
 
+super + o
+	~/dotfiles/scripts/open_project.sh
+
 # start rofi
 super + p
 	rofi -show run
