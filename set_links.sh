@@ -29,6 +29,7 @@ ln -s $PWD/desktop_env/alacritty_themes/kanagawa_wave.toml ~/.config/alacritty/k
 ln -s $PWD/desktop_env/config.rasi ~/.config/rofi/config.rasi
 ln -s $PWD/desktop_env/dunstrc ~/.config/dunst/dunstrc
 ln -s $PWD/desktop_env/config.toml ~/.config/helix/config.toml
+ln -s $PWD/desktop_env/languages.toml ~/.config/helix/languages.toml
 
 # scripts
 ln -s $PWD/scripts/rclone-sync.sh ~/scripts/

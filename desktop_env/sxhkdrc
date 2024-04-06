@@ -31,6 +31,10 @@ super + shift + w
 	sleep 0.2; \
 	bspc node focused--state tiled
 
+## start file browser
+super + shift + e
+	thunar
+
 ###
 #
 # bspwm
