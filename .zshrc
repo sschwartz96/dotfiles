@@ -86,7 +86,8 @@ alias file-explorer='thunar'
 alias lg='lazygit'
 alias lzd='lazydocker'
 alias gdifft='GIT_EXTERNAL_DIFF=difft git diff'
-alias gd=godo
+alias gd='godo'
+alias hx='helix'
 ########## END aliases ########## 
 
 
