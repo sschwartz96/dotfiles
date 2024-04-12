@@ -8,8 +8,10 @@ then
 	bspc monitor eDP -d 1 2 3 4 7 8 9 0
 	polybar lenovo > /dev/null 2>&1 & disown
 	polybar systray > /dev/null 2>&1 & disown 
-	(sleep 3 && ~/dotfiles/scripts/hideIt.sh --name '^polybar-lenovo_eDP' --direction top --signal --steps 0.5 > /dev/null 2>&1 & disown) & disown
-	(sleep 3 && ~/dotfiles/scripts/hideIt.sh --name '^Polybar tray window$' --direction left --signal --steps 0.5 > /dev/null 2>&1 & disown) & disown
+	(sleep 3 && ~/dotfiles/scripts/hideIt.sh --name '^polybar-lenovo_eDP' \
+		--direction top --signal --steps 0.5 --peek 0 > /dev/null 2>&1 & disown) & disown
+	(sleep 3 && ~/dotfiles/scripts/hideIt.sh --name '^Polybar tray window$' \
+		--direction left --signal --steps 0.5 --peek 0 > /dev/null 2>&1 & disown) & disown
 else
 	echo "$HOST"
 	# set up multi-monitor
@@ -29,9 +31,12 @@ else
 	polybar bottom > /dev/null 2>&1 & disown
 	polybar top > /dev/null 2>&1 & disown
 	polybar systray > /dev/null 2>&1 & disown 
-	(sleep 3 && ~/dotfiles/scripts/hideIt.sh --name '^polybar-bottom' --direction top --signal --steps 0.5 > /dev/null 2>&1 & disown) & disown
-	(sleep 3 && ~/dotfiles/scripts/hideIt.sh --name '^polybar-top' --direction top --signal --steps 0.5 > /dev/null 2>&1 & disown) & disown
-	(sleep 3 && ~/dotfiles/scripts/hideIt.sh --name '^Polybar tray window$' --direction left --signal --steps 0.5 > /dev/null 2>&1 & disown) & disown
+	(sleep 3 && ~/dotfiles/scripts/hideIt.sh --name '^polybar-bottom' --direction top --peek 0 \
+		--signal --steps 0.5 > /dev/null 2>&1 & disown) & disown
+	(sleep 3 && ~/dotfiles/scripts/hideIt.sh --name '^polybar-top' --direction top --peek 0 \
+		--signal --steps 0.5 > /dev/null 2>&1 & disown) & disown
+	(sleep 3 && ~/dotfiles/scripts/hideIt.sh --name '^Polybar tray window$' --direction left --peek 0 \
+		--signal --steps 0.5 > /dev/null 2>&1 & disown) & disown
 	
 fi
 
