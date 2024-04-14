@@ -14,3 +14,4 @@ dunst			/home/sam/.config/dunst/dunstrc
 xscreensaver	/home/sam/.xscreensaver
 ledger			/home/sam/gdrive/Documents&Bookkeeping/2021/schwartzit_2021.ledger
 helix			/home/sam/dotfiles/desktop_env/config.toml
+helix-languages	/home/sam/dotfiles/desktop_env/languages.toml

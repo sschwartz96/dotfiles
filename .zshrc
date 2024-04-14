@@ -116,6 +116,8 @@ export PATH="$PATH:/home/sam/.dotnet/tools"
 export PATH=$PATH:/usr/local/go/bin
 # for my personal scripts
 export PATH=$PATH:~/scripts/
+# rust local bin
+export PATH=$PATH:~/.cargo/bin/
 
 # VARIABLES 
 export MYVIMRC="~/.config/nvim/init.vim"
@@ -185,11 +187,6 @@ fi
 [ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
 
 autoload -U +X bashcompinit && bashcompinit
-
-# pnpm
-export PNPM_HOME="/home/sam/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
 
 # rust config
 source "$HOME/.cargo/env"

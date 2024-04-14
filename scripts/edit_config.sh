@@ -15,7 +15,7 @@ do
 		file=${values[${counter}]}
 		cd $(dirname $file)
 		echo $file
-		alacritty -e nvim --cmd 'sleep 1ms' $file
+		alacritty -e helix $file
 	fi
 	counter=$((counter+1))
 done
