@@ -6,6 +6,10 @@ auto-format = true
 [language-server.scls]
 command = "simple-completion-language-server"
 
+[language-server.omnisharp]
+command = "omnisharp"
+args = [ "--languageserver" ]
+
 [language-server.scls.config]
 max_completion_items = 20
 snippets_first = true
@@ -16,4 +20,8 @@ feature_paths = true
 
 [[language]]
 name = "make"
-language-servers = ["scls"]
+language-servers = [ "scls" ]
+
+[[language]]
+name = "svelte"
+language-servers = [ "svelteserver", "tailwindcss-ls" ]
