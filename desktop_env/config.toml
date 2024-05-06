@@ -3,6 +3,7 @@ theme = "kanagawa"
 [editor]
 line-number = "relative"
 auto-format = true
+true-color = true
 
 [editor.cursor-shape]
 insert = "bar"
