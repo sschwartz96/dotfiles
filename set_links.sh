@@ -31,7 +31,7 @@ ln -s $PWD/desktop_env/dunstrc ~/.config/dunst/dunstrc
 ln -s $PWD/helix/config.toml ~/.config/helix/config.toml
 ln -s $PWD/helix/languages.toml ~/.config/helix/languages.toml
 mkdir -p ~/.config/helix/snippets
-ln -s $PWD/helix/snippets/* ~/.config/helix/snippets/*
+ln -s $PWD/helix/snippets/* ~/.config/helix/snippets/
 
 # scripts
 ln -s $PWD/scripts/rclone-sync.sh ~/scripts/
