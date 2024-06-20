@@ -17,6 +17,7 @@ tmux new-window -n 'cmd' -c ./db
 tmux send-keys 'make db' Enter
 
 tmux split-window -c ./data
+tmux send-keys 'sleep 1' Enter
 tmux send-keys 'make run' Enter
 
 tmux attach

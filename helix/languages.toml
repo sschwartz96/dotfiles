@@ -25,14 +25,13 @@ config = { "gofumpt" = true, "semanticTokens" = true, "staticcheck" = true, "ver
 [language-server.golangci-lint-lsp]
 command = "golangci-lint-langserver"
 
-[language-server.golangci-lint-lsp.config]
-command = [
-  "golangci-lint",
-  "run",
-  "--out-format",
-  "json",
-  "--issues-exit-code=1",
-]
+[language-server.tailwindcss-ls]
+command = "tailwindcss-language-server"
+args = ["--stdio"]
+
+[language-server.tailwindcss-ls.config.tailwindCSS]
+experimental = { classRegex =  [ "Class\\(\"([^\"]*)\"\\)" ] }
+includeLanguages = { go = "go" }
 
 [[language]]
 name = "make"
@@ -40,7 +39,8 @@ language-servers = ["scls"]
 
 [[language]]
 name = "go"
-language-servers = ["gopls", "golangci-lint-lsp", "scls"]
+formatter = { command = "goimports"}
+language-servers = ["gopls", "golangci-lint-lsp", "scls", "tailwindcss-ls"]
 
 [[language]]
 name = "svelte"
