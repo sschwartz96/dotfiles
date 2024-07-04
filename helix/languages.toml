@@ -11,7 +11,7 @@ command = "omnisharp"
 args = ["--languageserver"]
 
 [language-server.scls.config]
-max_completion_items = 20
+max_completion_items = 7
 snippets_first = true
 feature_words = true
 feature_snippets = true
@@ -29,6 +29,7 @@ command = "golangci-lint-langserver"
 command = "tailwindcss-language-server"
 args = ["--stdio"]
 
+# tailwind support for gomponents
 [language-server.tailwindcss-ls.config.tailwindCSS]
 experimental = { classRegex =  [ "Class\\(\"([^\"]*)\"\\)" ] }
 includeLanguages = { go = "go" }
