@@ -66,9 +66,8 @@ require("lazy").setup({
   },
 
   -- debugging
-  'mfussenegger/nvim-dap',
+  { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} },
   'leoluz/nvim-dap-go',
-  'rcarriga/nvim-dap-ui',
   'theHamsta/nvim-dap-virtual-text',
 
   -- surround

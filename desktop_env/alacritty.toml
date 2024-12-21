@@ -1,7 +1,3 @@
-import = [
-  "~/.config/alacritty/kanagawa_wave.toml"
-]
-
 # [colors.bright]
 # black = "0x928374"
 # blue = "0x83a598"
@@ -67,3 +63,8 @@ mods = "Control|Shift"
 
 [scrolling]
 multiplier = 3
+
+[general]
+import = [
+  "~/.config/alacritty/kanagawa_wave.toml"
+]

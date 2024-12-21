@@ -18,7 +18,7 @@ if [ "$HOSTNAME" = "lenovo-artix" ]; then
 	libinput-gestures &
 
 	# set brightness
-	xbacklight -set 25
+	xbacklight -set 20
 fi
 
 # desktop only configuration
@@ -53,7 +53,7 @@ pipewire &
 pipewire-pulse &
 wireplumber &
 
-picom --fading --fade-delta=5 &
+picom --backend xrender --fading --fade-delta=5 &
 redshift -l 36.15:-97.38 &
 ntfd & # weather for polybar
 
@@ -61,7 +61,7 @@ ntfd & # weather for polybar
 xrdb -merge ~/.Xresources
 
 # turn off the screen after x seconds
-xset dpms 0 0 6000
+xset dpms 0 0 60
 
 # screensaver
 #xscreensaver &

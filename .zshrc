@@ -163,6 +163,8 @@ export ROFI_COMMAND="rofi -dmenu -no-fixed-num-lines -no-custom -i -p"
 # use difft as the default git diff viewer
 export GIT_EXTERNAL_DIFF="difft"
 
+export TZ='America/Chicago'
+
 ########## END variables ########## 
 
 # fzf
@@ -196,3 +198,9 @@ source "$HOME/.cargo/env"
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
 
 source /home/sam/.config/broot/launcher/bash/br
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /home/sam/.dart-cli-completion/zsh-config.zsh ]] && . /home/sam/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+
