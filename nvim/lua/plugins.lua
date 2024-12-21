@@ -22,9 +22,6 @@ require("lazy").setup({
   -- treesitter
   { 'nvim-treesitter/nvim-treesitter', build = ":TSUpdate" },
 
-  -- neodev
-  { "folke/neodev.nvim",               opts = {} },
-
   -- lsp
   "neovim/nvim-lspconfig",
 

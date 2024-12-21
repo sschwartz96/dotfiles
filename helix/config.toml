@@ -4,7 +4,8 @@ theme = "kanagawa"
 line-number = "relative"
 auto-format = true
 true-color = true
-bufferline = "multiple"
+search.smart-case = false
+bufferline = "always"
 
 [editor.cursor-shape]
 insert = "bar"
