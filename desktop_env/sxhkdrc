@@ -5,7 +5,7 @@ ctrl + shift + r
 
 # sleep
 super + ctrl + shift + s
-	sudo zzz
+	loginctl suspend
 
 super + shift + s
 	sleep 0.25 && shutter --select
@@ -152,7 +152,7 @@ XF86AudioPlay
 	playerctl play-pause
 
 super + m
-	playerctl play-pause
+	pamixer --toggle-mute
 
 super + Down
 	playerctl pause

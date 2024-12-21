@@ -5,6 +5,7 @@ line-number = "relative"
 auto-format = true
 true-color = true
 search.smart-case = false
+bufferline = "always"
 
 
 [editor.cursor-shape]
