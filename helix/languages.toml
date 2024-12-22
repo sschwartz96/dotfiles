@@ -13,6 +13,14 @@ file_store = {}
 type = "ollama"
 # model = "deepseek-coder-v2"
 model = "qwen2.5-coder:7b"
+# chat_endpoint = "http://192.168.2.5:11434/api/chat"
+# generate_endpoint = "http://192.168.2.5:11434/api/generate"
+
+[language-server.lsp-ai.config.models.model2]
+type = "mistral_fim"
+fim_endpoint = "https://codestral.mistral.ai/v1/fim/completions"
+model = "codestral-latest"
+auth_token_env_var_name = "MISTRAL_API_KEY"
 
 # [language-server.lsp-ai.config.completion]
 # model = "model1"
@@ -26,7 +34,7 @@ model = "qwen2.5-coder:7b"
 [[language-server.lsp-ai.config.chat]]
 trigger = "!C"
 action_display_name = "Chat"
-model = "model1"
+model = "model2"
 
 [language-server.lsp-ai.config.chat.parameters]
 max_context = 4096
@@ -34,7 +42,7 @@ max_tokens = 1024
 system = "You are a code assistant chatbot. The user will ask you for assistance coding and you will do you best to answer succinctly and accurately"
 
 [language-server.lsp-ai.config.completion]
-model = "model1"
+model = "model2"
 parameters = { fim = { start = "<｜fim_begin｜>", middle = "<｜fim_hole｜>", end = "<｜fim_end｜>" }, max_context = 2000, options = { num_predict = 32 } }
 
 # [[language-server.lsp-ai.config.actions]]
