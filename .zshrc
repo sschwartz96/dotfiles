@@ -171,19 +171,6 @@ export TZ='America/Chicago'
 #export FZF_DEFAULT_COMMAND="find -L" # finds hidden files too
 export FZF_DEFAULT_COMMAND="rg --files --hidden --iglob '!{node_modules,.git,.ccls-cache}'"
 
-# docker completion
-fpath=(~/.zsh/completion $fpath)
-autoload -Uz compinit && compinit -i
-
-
-# cd into home
-#cd ~
-
-# do laptop specific stuff
-if [ "$HOST" = "sam-lapt" ]; then
-	export WINIT_HIDPI_FACTOR=1.0
-fi
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
 [ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
@@ -193,14 +180,20 @@ autoload -U +X bashcompinit && bashcompinit
 # rust config
 source "$HOME/.cargo/env"
 
-# tabtab source for packages
-# uninstall by removing these lines
-[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
-
 source /home/sam/.config/broot/launcher/bash/br
 
 ## [Completion]
+# 
 ## Completion scripts setup. Remove the following line to uninstall
 [[ -f /home/sam/.dart-cli-completion/zsh-config.zsh ]] && . /home/sam/.dart-cli-completion/zsh-config.zsh || true
+
+# task (Taskfile)
+eval "$(task --completion zsh)"
+
+
+# docker completion
+fpath=(~/.zsh/completion $fpath)
+autoload -Uz compinit && compinit -i
+
 ## [/Completion]
 
