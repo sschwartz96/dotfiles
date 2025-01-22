@@ -19,6 +19,9 @@ if [ "$HOSTNAME" = "lenovo-artix" ]; then
 
 	# set brightness
 	xbacklight -set 20
+
+	# turn off the screen after 60 seconds
+	xset dpms 0 0 60
 fi
 
 # desktop only configuration
@@ -31,6 +34,9 @@ if [ "$HOSTNAME" = "sam-artix" ]; then
 	xrandr --output DisplayPort-1 --mode 3440x1440 --rate 143.97 --set TearFree on
 
 	BG_LOCATION="/home/sam/pictures/outer_space.png"
+
+	# turn off the screen after 5 minutes
+	xset dpms 0 0 300
 fi
 
 # start dbus for playerctl & spotify, must be started early to allow programs opened by sxhkd to be listed in dbus
@@ -59,9 +65,6 @@ ntfd & # weather for polybar
 
 # fixed for large cursor
 xrdb -merge ~/.Xresources
-
-# turn off the screen after x seconds
-xset dpms 0 0 60
 
 # screensaver
 #xscreensaver &

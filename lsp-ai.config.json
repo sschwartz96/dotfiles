@@ -15,6 +15,12 @@
         "model": "codegemma:7b",
         "chat_endpoint": "http://192.168.2.5:11434/api/chat",
         "generate_endpoint": "http://192.168.2.5:11434/api/generate"
+      },
+      "model3": {
+        "type": "ollama",
+        "model": "qwen2.5-coder:7b",
+        "chat_endpoint": "http://192.168.2.5:11434/api/chat",
+        "generate_endpoint": "http://192.168.2.5:11434/api/generate"
       }
     },
     "chat": [
@@ -32,7 +38,7 @@
     "actions": [
       {
         "action_display_name": "Complete",
-        "model": "model2",
+        "model": "model1",
         "parameters": {
           "max_context": 4096,
           "max_tokens": 4096,
@@ -53,7 +59,7 @@
       },
       {
         "action_display_name": "Refactor",
-        "model": "model2",
+        "model": "model1",
         "parameters": {
           "max_context": 4096,
           "max_tokens": 4096,
@@ -74,7 +80,7 @@
       },
       {
         "action_display_name": "AI: Add Docs",
-        "model": "model2",
+        "model": "model1",
         "parameters": {
           "max_context": 4096,
           "max_tokens": 4096,
@@ -97,16 +103,11 @@
       }
     ],
     "completion": {
-      "model": "model2",
+      "model": "model1",
       "parameters": {
-        "fim": {
-          "start": "<｜fim_begin｜>",
-          "middle": "<｜fim_hole｜>",
-          "end": "<｜fim_end｜>"
-        },
-        "max_context": 2048,
+        "max_context": 2000,
         "options": {
-          "num_predict": 64
+          "num_predict": 32
         }
       }
     }
