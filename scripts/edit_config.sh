@@ -15,7 +15,8 @@ do
 		file=${values[${counter}]}
 		cd $(dirname $file)
 		echo $file
-		alacritty -e helix $file
+		# alacritty -e helix $file
+		alacritty -e nvim $file
 	fi
 	counter=$((counter+1))
 done

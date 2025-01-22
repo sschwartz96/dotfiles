@@ -118,9 +118,11 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:~/scripts/
 # rust local bin
 export PATH=$PATH:~/.cargo/bin/
+# for neovim-nightly
+export PATH=$PATH:~/bin/nvim-linux64/bin
 
 # VARIABLES 
-export MYVIMRC="~/.config/nvim/init.vim"
+export MYVIMRC="~/.config/nvim/init.lua"
 export MYCOCRC="~/.config/nvim/coc-settings.json"
 export MOPS=~/projects/m-ops.org
 # export GOREP=~/go/src/github.com/sschwartz96
@@ -128,7 +130,7 @@ export GO111MODULE=on
 export SYNCAPOD_OLD=~/go/src/github.com/sschwartz96/syncapod
 export SYNCAPOD=~/projects/syncapod
 export BROWSER="/usr/bin/firefox"
-export TERM="xterm-256color"
+# export TERM="xterm-256color"
 export EDITOR="nvim"
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
@@ -164,6 +166,9 @@ export ROFI_COMMAND="rofi -dmenu -no-fixed-num-lines -no-custom -i -p"
 export GIT_EXTERNAL_DIFF="difft"
 
 export TZ='America/Chicago'
+
+# used to prevent fzf-lua delay within neovim
+export ESCDELAY="1"
 
 ########## END variables ########## 
 
