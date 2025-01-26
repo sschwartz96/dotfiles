@@ -23,4 +23,14 @@ return {
     lazy = true,
     event = "BufEnter",
   },
+
+  -- formatting (not through LSP)
+  {
+    'stevearc/conform.nvim',
+    opts = {
+      formatters_by_ft = {
+        typescript = { "prettierd", "prettier", stop_after_first = true },
+      },
+    },
+  }
 }
