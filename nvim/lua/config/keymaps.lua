@@ -36,12 +36,24 @@ vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>")
 -- quickfix
 vim.keymap.set("n", "<M-j>", "<cmd>cnext<cr>")
 vim.keymap.set("n", "<M-k>", "<cmd>cprev<cr>")
+
 -- quickfix end
+
+-- diagnostic
+vim.keymap.set("n", "<leader>xq", "<cmd>lua vim.diagnostic.setqflist()<cr>")
+
+-- When lines are on, text is off. Text on, lines off. Minimize clutter.
+vim.keymap.set('', '<leader>xv', function()
+  vim.diagnostic.config({
+    -- virtual_lines = not vim.diagnostic.config().virtual_lines,
+    virtual_text = not vim.diagnostic.config().virtual_text,
+  })
+end, { desc = 'Toggle diagnostic [l]ines' })
+-- end diagnostic
 
 -- debug
 vim.keymap.set("n", "<leader>db", "<cmd>DapToggleBreakpoint<cr>")
 vim.keymap.set("n", "<leader>5", "<cmd>DapContinue<cr>")
-
 
 vim.keymap.set('n', '<F5>', function() require('dap').continue() end)
 vim.keymap.set('n', '<F10>', function() require('dap').step_over() end)
@@ -53,6 +65,8 @@ vim.keymap.set('n', '<F12>', function() require('dap').step_out() end)
 --   function() require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end)
 vim.keymap.set('n', '<Leader>dr', function() require('dap').repl.open() end, { desc = "dap.repl.open" })
 vim.keymap.set('n', '<Leader>dl', function() require('dap').run_last() end, { desc = "dap.run_last" })
+
+-- dap ui
 vim.keymap.set({ 'n', 'v' }, '<Leader>dh', function() require('dap.ui.widgets').hover() end,
   { desc = "dap.ui.widgets.hover" })
 vim.keymap.set({ 'n', 'v' }, '<Leader>dp', function() require('dap.ui.widgets').preview() end,
@@ -71,6 +85,9 @@ vim.keymap.set('n', '<Leader>ds',
   end,
   { desc = "dap.ui.widgets.scopes" }
 )
+-- end dap ui
+
+-- dap view
 vim.keymap.set("n", "<leader>dv", function()
     require("dap-view").toggle()
   end,
@@ -81,3 +98,4 @@ vim.keymap.set("n", "<leader>da", function()
   end,
   { desc = "dap-view.add_expr" }
 )
+-- end dap view

@@ -6,8 +6,9 @@ GREEN='\033[0;32m'
 NC='\033[0m' # No Color
 
 # list node packages to install
-node_packages=("pnpm" "yaml-language-server" "svelte-language-server" "@tailwindcss/language-server" "typescript-language-server" "vscode-langservers-extracted" "@fsouza/prettierd")
+node_packages=("yaml-language-server" "svelte-language-server" "@tailwindcss/language-server" "typescript-language-server" "vscode-langservers-extracted" "@fsouza/prettierd")
 
+pnpm self-update
 for p in ${node_packages[@]}; do
 	echo -e "    ${GREEN}Updating $p ${NC}"
 	pnpm i -g $p
@@ -22,7 +23,7 @@ for p in ${go_packages[@]}; do
 done
 
 # TODO : add rust???
-cargo_crates=("$ https://github.com/estin/simple-completion-language-server.git")
+cargo_crates=("https://github.com/estin/simple-completion-language-server.git")
 
 for c in ${cargo_crates[@]}; do
 	echo -e "    ${GREEN}Updating $c ${NC}"

@@ -39,7 +39,9 @@ return {
       local lspconfig = require("lspconfig")
 
       -- language server configuration
+      lspconfig.yamlls.setup({})
       lspconfig.lua_ls.setup({})
+      lspconfig.basedpyright.setup({})
       lspconfig.gopls.setup({})
       lspconfig.tailwindcss.setup(lua_setup)
       lspconfig.svelte.setup({})

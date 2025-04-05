@@ -60,6 +60,7 @@ return {
   -- debug plugin
   {
     "mfussenegger/nvim-dap",
+    dependencies = { "igorlfs/nvim-dap-view", opts = {} },
     config = function()
       local dap = require("dap")
 
@@ -95,16 +96,16 @@ return {
   {
     "theHamsta/nvim-dap-virtual-text",
     config = function()
-      require("nvim-dap-virtual-text").setup()
+      require("nvim-dap-virtual-text").setup({})
     end
   },
   --
   -- go specfic config
-  -- {
-  --   "leoluz/nvim-dap-go",
-  --   config = function()
-  --     require("dap-go").setup({})
-  --   end
-  -- },
+  {
+    "leoluz/nvim-dap-go",
+    config = function()
+      require("dap-go").setup({})
+    end
+  },
 
 }
