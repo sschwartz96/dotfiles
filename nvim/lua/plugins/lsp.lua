@@ -19,6 +19,16 @@ local lua_setup = {
   },
 }
 
+local basedpyright_setup = {
+  settings = {
+    basedpyright = {
+      analysis = {
+        typeCheckingMode = "standard",
+      }
+    }
+  }
+}
+
 return {
   {
     "neovim/nvim-lspconfig",
@@ -41,7 +51,7 @@ return {
       -- language server configuration
       lspconfig.yamlls.setup({})
       lspconfig.lua_ls.setup({})
-      lspconfig.basedpyright.setup({})
+      lspconfig.basedpyright.setup(basedpyright_setup)
       lspconfig.gopls.setup({})
       lspconfig.tailwindcss.setup(lua_setup)
       lspconfig.svelte.setup({})

@@ -43,13 +43,29 @@ local enrich_config = function(finalConfig, on_config)
 
     for line in io.lines(filePath) do
       local words = {}
+
+      -- handle blank lines
+      if line == "" then
+        print("blank line, skipping")
+        goto continue
+      end
+
+      -- handle comments
+      if string.find(line, "^#") then
+        print("string with comment, skipping")
+        goto continue
+      end
+
       for word in string.gmatch(line, "[^=]+") do
         table.insert(words, word)
       end
       if not final_config.env then
+        print("here")
         final_config.env = {}
       end
+      print(string.format("%s = %s", words[1], words[2]))
       final_config.env[words[1]] = words[2]
+      ::continue::
     end
   end
 
@@ -96,16 +112,16 @@ return {
   {
     "theHamsta/nvim-dap-virtual-text",
     config = function()
-      require("nvim-dap-virtual-text").setup({})
+      require("nvim-dap-virtual-text").setup()
     end
   },
   --
   -- go specfic config
-  {
-    "leoluz/nvim-dap-go",
-    config = function()
-      require("dap-go").setup({})
-    end
-  },
+  -- {
+  --   "leoluz/nvim-dap-go",
+  --   config = function()
+  --     require("dap-go").setup({})
+  --   end
+  -- },
 
 }
