@@ -28,6 +28,7 @@ ln -s $PWD/desktop_env/alacritty.toml ~/.config/alacritty/alacritty.toml
 ln -s $PWD/desktop_env/alacritty_themes/kanagawa_wave.toml ~/.config/alacritty/kanagawa_wave.toml
 ln -s $PWD/desktop_env/config.rasi ~/.config/rofi/config.rasi
 ln -s $PWD/desktop_env/dunstrc ~/.config/dunst/dunstrc
+ln -s $PWD/desktop_env/ghostty/config ~/.config/ghostty/config
 ln -s $PWD/helix/config.toml ~/.config/helix/config.toml
 ln -s $PWD/helix/languages.toml ~/.config/helix/languages.toml
 mkdir -p ~/.config/helix/snippets
