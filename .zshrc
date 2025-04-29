@@ -174,7 +174,7 @@ export ESCDELAY="1"
 
 # fzf
 #export FZF_DEFAULT_COMMAND="find -L" # finds hidden files too
-export FZF_DEFAULT_COMMAND="rg --files --hidden --iglob '!{node_modules,.git,.ccls-cache}'"
+export FZF_DEFAULT_COMMAND="rg --files --hidden --no-ignore --iglob '!{node_modules,.git,.ccls-cache}'"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
