@@ -7,7 +7,11 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     -- or if using mini.icons/mini.nvim
     -- dependencies = { "echasnovski/mini.icons" },
-    opts = {},
+    opts = {
+      files = {
+        cmd = 'fd --type f -E node_modules -E .git', -- -E == exclude
+      },
+    },
   },
 
   -- file tree
