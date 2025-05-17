@@ -18,3 +18,4 @@ helix-languages	/home/sam/dotfiles/helix/languages.toml
 update-tools    /home/sam/dotfiles/update-tools.sh
 hideIt.sh		/home/sam/dotfiles/scripts/hideIt.sh
 ghostty			/home/sam/dotfiles/desktop_env/ghostty/config
+ghostty_tab		/home/sam/dotfiles/desktop_env/ghostty/tab.css
