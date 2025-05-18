@@ -9,7 +9,9 @@ return {
     -- dependencies = { "echasnovski/mini.icons" },
     opts = {
       files = {
-        cmd = 'fd --type f -E node_modules -E .git', -- -E == exclude
+        cmd     = 'fd --type f -E node_modules -E .git', -- -E == exclude
+        fd_opts = [[--color=never --type l --exclude .git]],
+        hidden  = false,
       },
     },
   },

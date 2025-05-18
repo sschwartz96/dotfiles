@@ -101,8 +101,9 @@ export PATH=$PATH:~/bin/dart-sass
 export PATH=$PATH:~/bin/robo3t/bin
 export PATH=$PATH:~/bin/discord
 export PATH=$PATH:~/github.com/flutter/bin
-export PATH=$PATH:~/bin/android-studio-dir/bin
-export PATH=$PATH:~/bin/android-studio-dir/jre
+export PATH=$PATH:~/bin/android-studio/bin
+export PATH=$PATH:~/bin/android-studio/jre
+export PATH=$PATH:~/Android/Sdk/cmdline-tools/latest/bin
 #for python-pip
 export PATH=$PATH:/home/sam/.local/bin
 export PATH=$PATH:/home/sam/github.com/protobuf.dart/protoc_plugin/bin
@@ -139,7 +140,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 # for android-studio, prevent blank startup
 export _JAVA_AWT_WM_NONREPARENTING=1
 # for sdkmanager
-export JAVA_HOME=~/bin/android-studio-dir/jre
+export JAVA_HOME=~/bin/android-studio/jbr
 # for debug on android device
 export NO_PROXY=localhost,127.0.0.1
 # for flutter web development
@@ -174,7 +175,8 @@ export ESCDELAY="1"
 
 # fzf
 #export FZF_DEFAULT_COMMAND="find -L" # finds hidden files too
-export FZF_DEFAULT_COMMAND="rg --files --hidden --no-ignore --iglob '!{node_modules,.git,.ccls-cache}'"
+# export FZF_DEFAULT_COMMAND="rg --files hidden --no-ignore --iglob '!{node_modules,.git,.ccls-cache}'"
+export FZF_DEFAULT_COMMAND="fd --type f -E node_modules -E .git"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
