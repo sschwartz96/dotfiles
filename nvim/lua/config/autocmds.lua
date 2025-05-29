@@ -3,7 +3,6 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*",
   -- TODO: should we move this since conform is here?
   callback = function(args)
-
     -- files to be formatted by conform.nvim
     if vim.bo.filetype == "typescript" then
       require("conform").format({ bufnr = args.buf, timeout_ms = 2000 })
@@ -33,5 +32,19 @@ vim.api.nvim_create_autocmd("BufWritePre", {
       end
     end
     vim.lsp.buf.format({ async = false })
+  end
+})
+
+-- auto update lazy.nvim
+local function lazyvim_augroup(name)
+  return vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true })
+end
+
+vim.api.nvim_create_autocmd("VimEnter", {
+  group = lazyvim_augroup("autoupdate"),
+  callback = function()
+    if require("lazy.status").has_updates() then
+      require("lazy").update({ show = false, })
+    end
   end
 })

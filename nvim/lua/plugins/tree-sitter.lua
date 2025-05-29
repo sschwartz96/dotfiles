@@ -8,15 +8,15 @@ return {
         ignore_install = {},
 
         -- A list of parser names, or "all" (the listed parsers MUST always be installed)
-        ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "go" },
+        ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "go", "dart" },
         sync_install = false,
         auto_install = true,
 
         highlight = {
           enable = true,
           additional_vim_regex_highlighting = false,
-
         },
+
         incremental_selection = {
           enable = true,
           keymaps = {
@@ -26,6 +26,11 @@ return {
             node_decremental = "<leader>sd",
           },
         },
+
+        indent = {
+          enable = true,
+        },
+
         textobjects = {
           select = {
             enable = true,
@@ -41,6 +46,7 @@ return {
             },
           },
         },
+
       })
     end
   },
