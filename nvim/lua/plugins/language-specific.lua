@@ -1,8 +1,6 @@
 return {
   -- markdown
-  {
-    ''
-  },
+  -- TODO
   -- flutter
   {
     'nvim-flutter/flutter-tools.nvim',

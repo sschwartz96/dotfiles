@@ -35,8 +35,10 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     for _, client in ipairs(vim.lsp.get_clients()) do
       if client and client.server_capabilities.documentFormattingProvider then
         vim.lsp.buf.format({
-          filter = function(c) return c.name ~= client.name end
+          filter = function(c) return c.name == client.name end
         })
+      else
+        print("client does NOT provide formatting provider: " .. client.name)
       end
     end
   end
