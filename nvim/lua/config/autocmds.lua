@@ -31,7 +31,14 @@ vim.api.nvim_create_autocmd("BufWritePre", {
         end
       end
     end
-    vim.lsp.buf.format({ async = false })
+    -- loop through all LSP clients and send the format command only for that LSP client
+    for _, client in ipairs(vim.lsp.get_clients()) do
+      if client and client.server_capabilities.documentFormattingProvider then
+        vim.lsp.buf.format({
+          filter = function(c) return c.name ~= client.name end
+        })
+      end
+    end
   end
 })
 

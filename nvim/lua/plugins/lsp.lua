@@ -59,8 +59,12 @@ return {
       lspconfig.html.setup({})
       lspconfig.cssls.setup({})
       lspconfig.csharp_ls.setup({})
+
+      -- new enable command
+      vim.lsp.enable("marksman")
+
+      -- handled by the flutter-tools.nvim plugin
       -- lspconfig.dartls.setup({})
-      -- vim.lsp.enable('csharp_ls')
     end
   }
 }

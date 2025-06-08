@@ -20,6 +20,10 @@ return {
     --     }
     --   }
     -- },
+    completion = {
+      menu = { auto_show = false },
+      ghost_text = { enabled = true },
+    },
     keymap = {
       preset = "super-tab",
     },

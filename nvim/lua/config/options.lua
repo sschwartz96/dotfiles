@@ -10,6 +10,7 @@ vim.opt.shiftwidth = 4       -- Size of an indent
 
 vim.opt.termguicolors = true -- True color support
 vim.opt.scrolloff = 8
+vim.opt.title = true
 
 vim.wo.wrap = false
 

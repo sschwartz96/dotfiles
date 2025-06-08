@@ -32,5 +32,10 @@ return {
         typescript = { "prettierd", "prettier", stop_after_first = true },
       },
     },
+  },
+
+  -- bullets.vim
+  {
+    'bullets-vim/bullets.vim',
   }
 }

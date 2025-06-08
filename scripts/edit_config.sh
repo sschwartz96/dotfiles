@@ -16,7 +16,9 @@ do
 		cd $(dirname $file)
 		echo $file
 		# alacritty -e helix $file
+		bspc rule -a Alacritty rectangle=740x960+0+0 center=on state=floating
 		alacritty -e nvim $file
+		bspc rule -r tail
 	fi
 	counter=$((counter+1))
 done
