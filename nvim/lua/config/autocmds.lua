@@ -18,7 +18,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 
     -- organizeImports on save only *.go files
     if args.file:match(".go$") then
-      print("organizeImports sent to lsp before format")
+      -- print("organizeImports sent to lsp before format")
       local params   = vim.lsp.util.make_range_params(0, "utf-16")
       params.context = { only = { "source.organizeImports" } }
       local result   = vim.lsp.buf_request_sync(args.buf, "textDocument/codeAction", params)
