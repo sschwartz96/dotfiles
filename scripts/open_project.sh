@@ -1,7 +1,7 @@
 #!/bin/bash
 
-choices=("mma-stats-lab")
-values=("/home/sam/dotfiles/tmux/mma-stats-lab.sh")
+choices=("yak" "mma-stats-lab")
+values=("/home/sam/dotfiles/tmux/yak.sh" "/home/sam/dotfiles/tmux/mma-stats-lab.sh")
 
 chosen=$(echo "${choices[@]}" | rofi -dmenu -i -p "Select tmux script:")
 echo value: $chosen

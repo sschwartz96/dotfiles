@@ -4,7 +4,8 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   -- TODO: should we move this since conform is here?
   callback = function(args)
     -- files to be formatted by conform.nvim
-    if vim.bo.filetype == "typescript" then
+    if vim.bo.filetype == "typescript"
+        or vim.bo.filetype == "markdown" then
       require("conform").format({ bufnr = args.buf, timeout_ms = 2000 })
       return
     end

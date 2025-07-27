@@ -20,3 +20,4 @@ hideIt.sh		/home/sam/dotfiles/scripts/hideIt.sh
 ghostty			/home/sam/dotfiles/desktop_env/ghostty/config
 ghostty_tab		/home/sam/dotfiles/desktop_env/ghostty/tab.css
 nvim-cheat		/home/sam/dotfiles/cheatsheets/nvim.md
+open_projects 	/home/sam/dotfiles/scripts/open_project.sh
